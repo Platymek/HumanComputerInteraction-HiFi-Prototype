@@ -1,23 +1,81 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { View, Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-export default function App(){
+import colors from './Colors'
+import TextBox from './pages/templates/components/TextBox'
+
+function TestHarness({ navigation, route }) {
+
+    const { colors } = route.params
 
     return (
 
-        <View style={styles.container}>
-            <Text>Open up App.js to start working on your app!</Text>
-            <StatusBar style="auto" />
+        <View
+            style={{
+
+                flex: 1,
+                alignItems: 'center',
+                justifyContent: 'center'
+            }}>
+
+            <Text>TextBox:</Text>
+
+            <TextBox
+
+                title={"Email"}
+                placeholder={"Example@gmail.com"}
+                colors={colors}
+            />
+
+            <TextBox
+
+                title={"Postcode"}
+                placeholder={"QW1 2TY"}
+                colors={colors}
+            />
+
+            <TextBox
+
+                title={"Address"}
+                placeholder={"House Number, Street, City.."}
+                colors={colors}
+            />
         </View>
     );
 }
 
-const styles = StyleSheet.create({
+const Stack = createNativeStackNavigator();
 
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
+function App() {
+
+    return (
+
+        <NavigationContainer>
+
+            <Stack.Navigator
+
+                initialRouteName="TestHarness"
+                screenOptions={{
+                    headerShown: true
+                }}
+            >
+
+                <Stack.Screen
+
+                    name="TestHarness"
+                    component={TestHarness}
+
+                    initialParams={{
+
+                        colors: colors
+                    }}
+                />
+
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
+}
+
+export default App;
