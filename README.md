@@ -13,3 +13,10 @@ Pull and then type `npx install expo` or `npm install` and run using `npx expo s
 - colors: color palette of page
 - title: text above text box
 - placeholder: placeholder text
+
+### BigButton
+
+#### props
+- colors: color palette of page
+- title: text in big button
+- (optional) source: source of image

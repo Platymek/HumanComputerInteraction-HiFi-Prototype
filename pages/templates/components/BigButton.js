@@ -25,8 +25,8 @@ export default function BigButton(props) {
 
                         style={{
 
-                            width: 100,
-                            height: 100,
+                            width: 110,
+                            height: 110,
                             marginTop: 12,
                         }}
                     />
@@ -59,6 +59,7 @@ export default function BigButton(props) {
                     borderWidth: 3,
                     borderColor: props.colors[3],
                     borderRadius: 4,
+                    alignItems: 'center'
                 }]}
             >
                 <Text
@@ -69,8 +70,6 @@ export default function BigButton(props) {
 
                         color: props.colors[1],
                         fontSize: 28,
-                        marginLeft: 12,
-                        marginRight: 12,
                     }}
                 >
                     {props.title}

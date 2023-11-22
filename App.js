@@ -25,8 +25,19 @@ function TestHarness({ navigation, route }) {
             <BigButton
 
                 colors={colors}
-                title="Log In"
+                title="Bird Guide"
                 source={require("./assets/icon.png")}
+
+                onPress={() => {
+
+                    navigation.navigate("TestHarness2")
+                }}
+            />
+
+            <BigButton
+
+                colors={colors}
+                title="Hello"
 
                 onPress={() => {
 
