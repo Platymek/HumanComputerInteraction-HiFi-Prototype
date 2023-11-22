@@ -11,3 +11,10 @@ Under each component is listed the properties passed through as a parameter in '
 ### TextBox
 - title: text above text box
 - placeholder: placeholder text
+
+### BigButton
+
+#### props
+- colors: color palette of page
+- title: text in big button
+- (optional) source: source of image
