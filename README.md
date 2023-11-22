@@ -13,8 +13,11 @@ Under each component is listed the properties passed through as a parameter in '
 - placeholder: placeholder text
 
 ### BigButton
-
-#### props
-- colors: color palette of page
 - title: text in big button
 - (optional) source: source of image
+
+
+### HyperLinkText
+- text: text in big button
+- link: hyperlink text
+- (optional) alt: boolean, colour as red instead of green

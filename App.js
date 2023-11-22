@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import colors from './Colors'
-import BigButton from './pages/templates/components/BigButton'
+import HyperLinkText from './pages/templates/components/HyperLinkText'
 
 function TestHarness({ navigation, route }) {
 
@@ -22,11 +22,11 @@ function TestHarness({ navigation, route }) {
 
             <Text>Big Buttons:</Text>
 
-            <BigButton
+            <HyperLinkText
 
                 colors={colors}
-                title="Bird Guide"
-                source={require("./assets/icon.png")}
+                text="New user? "
+                link="Sign Up."
 
                 onPress={() => {
 
@@ -34,10 +34,12 @@ function TestHarness({ navigation, route }) {
                 }}
             />
 
-            <BigButton
+            <HyperLinkText
 
                 colors={colors}
-                title="Hello"
+                text="Looking for the admin page? "
+                link="Login as admin."
+                alt={true}
 
                 onPress={() => {
 
