@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import colors from './Colors'
-import TextBox from './pages/templates/components/TextBox'
+import BigButton from './pages/templates/components/BigButton'
 
 function TestHarness({ navigation, route }) {
 
@@ -20,28 +20,38 @@ function TestHarness({ navigation, route }) {
                 justifyContent: 'center'
             }}>
 
-            <Text>TextBox:</Text>
+            <Text>Big Buttons:</Text>
 
-            <TextBox
+            <BigButton
 
-                title={"Email"}
-                placeholder={"Example@gmail.com"}
                 colors={colors}
+                title="Log In"
+                source={require("./assets/icon.png")}
+
+                onPress={() => {
+
+                    navigation.navigate("TestHarness2")
+                }}
             />
+        </View>
+    );
+}
 
-            <TextBox
+function TestHarness2({ navigation, route }) {
 
-                title={"Postcode"}
-                placeholder={"QW1 2TY"}
-                colors={colors}
-            />
+    const { colors } = route.params
 
-            <TextBox
+    return (
 
-                title={"Address"}
-                placeholder={"House Number, Street, City.."}
-                colors={colors}
-            />
+        <View
+            style={{
+
+                flex: 1,
+                alignItems: 'center',
+                justifyContent: 'center'
+            }}>
+
+            <Text>I'm the new Page!</Text>
         </View>
     );
 }
@@ -66,6 +76,17 @@ function App() {
 
                     name="TestHarness"
                     component={TestHarness}
+
+                    initialParams={{
+
+                        colors: colors
+                    }}
+                />
+
+                <Stack.Screen
+
+                    name="TestHarness2"
+                    component={TestHarness2}
 
                     initialParams={{
 
