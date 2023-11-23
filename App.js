@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import colors from './Colors'
-import HyperLinkText from './pages/templates/components/HyperLinkText'
+import HintButton from './pages/templates/components/HintButton'
 
 function TestHarness({ navigation, route }) {
 
@@ -20,31 +20,19 @@ function TestHarness({ navigation, route }) {
                 justifyContent: 'center'
             }}>
 
-            <Text>Big Buttons:</Text>
+            <Text>Hint Button:</Text>
 
-            <HyperLinkText
+            <HintButton
 
+                text={"Hello! I'm in the modal!"}
                 colors={colors}
-                text="New user? "
-                link="Sign Up."
-
-                onPress={() => {
-
-                    navigation.navigate("TestHarness2")
-                }}
             />
 
-            <HyperLinkText
+            <HintButton
 
+                text={"Hello! I'm in the modal! Also, weirdly, I'm red?"}
                 colors={colors}
-                text="Looking for the admin page? "
-                link="Login as admin."
                 alt={true}
-
-                onPress={() => {
-
-                    navigation.navigate("TestHarness2")
-                }}
             />
         </View>
     );

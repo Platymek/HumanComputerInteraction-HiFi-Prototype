@@ -7,6 +7,7 @@ import { Text, View, Button, StyleSheet, Image } from 'react-native';
     props:
     - colors: color palette of page
     - title: text in big button
+    - onPress: function to be performed when the button is pressed
     - (optional) source: source of image
 */
 
