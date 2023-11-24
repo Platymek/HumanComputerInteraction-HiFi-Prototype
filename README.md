@@ -6,19 +6,23 @@ Pull and then type `npx install expo` or `npm install` and run using `npx expo s
 
 
 ## Pages
-
+Under each pages is listed the properties passed through as a parameter in 'props'. Every component must have the following values in the props dictionary, on top of those also listed:
+- colors: the site's colour scheme in list format
+  
 None exist yet.
 
 
 
 ## Templates
-
+Under each tempplate is listed the properties passed through as a parameter in 'props'. Every component must have the following values in the props dictionary, on top of those also listed:
+- colors: the site's colour scheme in list format
+  
 None exist yet.
 
 
 ## Components
 Under each component is listed the properties passed through as a parameter in 'props'. Every component must have the following values in the props dictionary, on top of those also listed:
-- color: the site's colour scheme in list format
+- colors: the site's colour scheme in list format
 
 ### TextBox
 - title: text above text box
