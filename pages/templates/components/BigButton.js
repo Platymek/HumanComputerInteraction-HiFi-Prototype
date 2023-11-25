@@ -87,12 +87,7 @@ export default function BigButton(props) {
                             ? props.colors[5]
                             : props.colors[3]),
 
-                    padding: 8,
-                    borderWidth: 3,
-
-                    borderColor: props.alt == true
-                        ? props.colors[5]
-                        : props.colors[3],
+                    padding: 12,
 
                     borderRadius: 12,
                     alignItems: 'center',

@@ -37,6 +37,7 @@ export default function HyperLinkText(props) {
 
                 onPress={props.onPress}
                 unstable_pressDelay={1}
+                hitSlop={8}
 
                 style={({ pressed }) => [{
 

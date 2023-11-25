@@ -113,7 +113,7 @@ export default function HintButton(props) {
                                 setModalVisible(!modalVisible)
                             }}
 
-                            alt={true}
+                            alt={props.alt}
                         />
                     </View>
                 </View>
@@ -129,6 +129,8 @@ export default function HintButton(props) {
                     { backgroundColor: getColor() },
                     styles.questionBorder
                 ]}
+
+                hitSlop={8}
             >
                 <Text
 

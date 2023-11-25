@@ -4,8 +4,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import colors from './Colors'
-import BigButton from './pages/templates/components/BigButton';
+
+import Account from './pages/templates/Account';
 import TextBox from './pages/templates/components/TextBox';
+import BigButton from './pages/templates/components/BigButton';
+import HyperLinkText from './pages/templates/components/HyperLinkText';
 
 function TestHarness({ navigation, route }) {
 
@@ -21,75 +24,65 @@ function TestHarness({ navigation, route }) {
                 justifyContent: 'center'
             }}>
 
-            <BigButton
+            <Account
 
                 colors={colors}
-                title={"Small Thumbnail!"}
 
-                onPress={() => {
+                buttonTitle={"Sign Up"}
+                navigation={navigation}
+                alt={false}
+
+                hyperText={"Looking for the admin page?"}
+                linkText={"Login as admin."}
+                hyperPage={"TestHarness2"}
+
+                onButtonPress={() => {
 
                     navigation.navigate("TestHarness2")
                 }}
+            >
+                <Text style={{
 
-                source={require("./assets/icon.png")}
-                alt={true}
-                small={true}
-            />
+                    padding: 4,
+                    fontSize: 18,
 
-            <BigButton
+                    color: colors[2],
+                }}>
+                    <Text style={{ fontWeight: "bold" }}>Enter your details to sign up for the Big Garden Birdwatch! </Text>
+                    <Text>Entering your details does not start your 1 hour session.</Text>
+                </Text>
 
-                colors={colors}
-                title={"Multi Line\nButton!?"}
+                <View style={{
 
-                onPress={() => {
+                    padding: 4,
+                }} />
 
-                    navigation.navigate("TestHarness2")
-                }}
+                <TextBox
 
-                source={require("./assets/icon.png")}
-                alt={true}
-                small={true}
-            />
+                    colors={colors}
+                    title={"Email"}
+                    placeholder={"example@mail.com"}
+                    alt={false}
+                />
 
-            <BigButton
+                <TextBox
 
-                colors={colors}
-                title="Bird Guide"
-                source={require("./assets/icon.png")}
+                    colors={colors}
+                    title={"Postcode"}
+                    placeholder={"AB1 2CD"}
+                    alt={false}
+                />
 
-                onPress={() => {
+                <TextBox
 
-                    navigation.navigate("TestHarness2")
-                }}
-            />
+                    colors={colors}
+                    title={"Address"}
+                    placeholder={"House Name, Street, City"}
+                    hintText={"Only one session can be started for every household"}
+                    alt={false}
+                />
 
-            <BigButton
-
-                colors={colors}
-                title="Hello"
-
-                onPress={() => {
-
-                    navigation.navigate("TestHarness2")
-                }}
-            />
-
-            <TextBox
-
-                colors={colors}
-                title={"Funny Monkey Goopy"}
-                placeholder={"Hello!"}
-                alt={true}
-
-                hintText={"Ooh... I'm a hint!"}
-            />
-
-            <TextBox
-
-                colors={colors}
-                title={"Funny Monkey Goopy"}
-                placeholder={"Hello!"}
-            />
+            </Account>
         </View>
     );
 }
@@ -133,6 +126,8 @@ function App() {
 
                     name="TestHarness"
                     component={TestHarness}
+
+                    options={{ headerShown:false }}
 
                     initialParams={{
 
