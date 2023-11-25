@@ -7,6 +7,7 @@ import BigButton from './BigButton'
 
     props:
     - colors: color palette of page
+    - text: text which will appear in the modal
     - (optional) alt: boolean, colour as red instead of green
 */
 
@@ -71,15 +72,19 @@ export default function HintButton(props) {
                     >
                         <View style={[{
 
-                            borderColor: getColor(),
                             marginTop: 16,
+                            backgroundColor: getColor(),
                         },
                             styles.questionBorder
                         ]}>
 
                             <Text
                                 selectable={false}
-                                style={[{ color: getColor() }, styles.questionText]}
+
+                                style={[
+                                    { color: props.colors[1] },
+                                    styles.questionText
+                                ]}
                             >
                                 ?
                             </Text>
@@ -118,10 +123,10 @@ export default function HintButton(props) {
 
                 unstable_pressDelay={1}
                 onPress={() => setModalVisible(true)}
-                color={ getColor() }
+                color={getColor()}
 
                 style={[
-                    { borderColor: getColor() },
+                    { backgroundColor: getColor() },
                     styles.questionBorder
                 ]}
             >
@@ -130,7 +135,7 @@ export default function HintButton(props) {
                     selectable={false}
 
                     style={[
-                        { color: getColor() },
+                        { color: props.colors[1] },
                         styles.questionText
                     ]}
                 >
@@ -145,16 +150,14 @@ const styles = StyleSheet.create({
 
     questionText: {
 
-        marginLeft: 10,
-        marginRight: 10,
+        marginLeft: 6,
+        marginRight: 6,
         fontWeight: 'bold',
-        fontSize: 24,
+        fontSize: 14,
     },
 
     questionBorder: {
 
-        padding: 0,
-        borderWidth: 3,
         borderRadius: 999,
         alignItems: 'center'
     }

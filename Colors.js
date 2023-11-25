@@ -16,8 +16,11 @@ const colors = [
     // grey (backdrops)
     "#A6A6A6",
 
-    // red (admin colour)
+    // red (alt colour)
     "#9F0F0F",
+
+    // red (dark alt colour)
+    "#630a28",
 ]
 
 export default colors

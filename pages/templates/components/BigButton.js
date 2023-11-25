@@ -9,26 +9,49 @@ import { Text, View, Button, StyleSheet, Image } from 'react-native';
     - title: text in big button
     - onPress: function to be performed when the button is pressed
     - (optional) source: source of image
+    - (optional) alt: changes to alternate colour when true
+    - (optional) small: changes to small icon
 */
 
 export default function BigButton(props) {
 
     function RenderImage(props) {
 
+        var size = props.small == true
+            ? 50
+            : 110;
+
+        var margin = props.small == true
+            ? 0
+            : 12;
+
+        var marginLeft = props.small == true
+            ? 24
+            : 0;
+
         if (props.source != undefined) {
 
             return (
 
-                <View>
+                <View
+
+                    style={{
+
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                    }}
+                >
                     <Image
 
                         source={props.source}
 
                         style={{
 
-                            width: 110,
-                            height: 110,
-                            marginTop: 12,
+                            width: size,
+                            height: size,
+                            marginTop: margin,
+                            marginBottom: margin,
+                            marginLeft: marginLeft,
                         }}
                     />
                 </View>
@@ -48,37 +71,73 @@ export default function BigButton(props) {
                 onPress={props.onPress}
                 unstable_pressDelay={1}
 
-                color={props.colors[3]}
+                color={props.alt == true
+                    ? props.colors[5]
+                    : props.colors[3]}
 
                 style={({ pressed }) => [{
 
                     backgroundColor: pressed
-                        ? props.colors[2]
-                        : props.colors[3],
+
+                        ? (props.alt == true
+                            ? props.colors[6]
+                            : props.colors[2])
+
+                        : (props.alt == true
+                            ? props.colors[5]
+                            : props.colors[3]),
 
                     padding: 8,
                     borderWidth: 3,
-                    borderColor: props.colors[3],
-                    borderRadius: 4,
-                    alignItems: 'center'
+
+                    borderColor: props.alt == true
+                        ? props.colors[5]
+                        : props.colors[3],
+
+                    borderRadius: 12,
+                    alignItems: 'center',
+
+                    shadowOpacity: 0.25,
+                    shadowRadius: 4,
+                    elevation: 5,
                 }]}
             >
-                <Text
-
-                    selectable={false}
+                <View
 
                     style={{
 
-                        color: props.colors[1],
-                        fontSize: 28,
+                        flexDirection: props.small == true
+                            ? 'row'
+                            : 'column',
+
+                        flexWrap: 'wrap',
+
+                        alignItems: 'center',
+                        justifyContent: 'center',
+
+                        marginLeft: 24,
+                        marginRight: 24,
                     }}
                 >
-                    {props.title}
-                </Text>
+                    <Text
 
-                <RenderImage
-                    source={props.source}
-                />
+                        selectable={false}
+
+                        style={{
+
+                            color: props.colors[1],
+                            fontSize: 28,
+                        }}
+                    >
+                        {props.title}
+                    </Text>
+
+                    <RenderImage
+
+                        source={props.source}
+                        small={props.small}
+                    />
+                </View>
             </Pressable>
         </View>
     );

@@ -27,10 +27,15 @@ Under each component is listed the properties passed through as a parameter in '
 ### TextBox
 - title: text above text box
 - placeholder: placeholder text
+- (optional) alt: boolean, colour as red instead of green
+- (optional) hintText: text which will appear in the hint modal
 
 ### BigButton
 - title: text in big button
+- onPress: function to be performed when the button is pressed
 - (optional) source: source of image
+- (optional) alt: changes to alternate colour when true
+- (optional) small: changes to small icon
 
 ### HyperLinkText
 - text: text in big button
@@ -38,5 +43,5 @@ Under each component is listed the properties passed through as a parameter in '
 - (optional) alt: boolean, colour as red instead of green
 
 ### HintButton Component
-- colors: color palette of page
-- (optional) alt: boolean, colour as red instead of green
+text: text which will appear in the modal
+(optional) alt: boolean, colour as red instead of green
