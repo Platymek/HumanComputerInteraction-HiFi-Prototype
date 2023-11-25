@@ -80,6 +80,8 @@ function TestHarness({ navigation, route }) {
                 title={"Funny Monkey Goopy"}
                 placeholder={"Hello!"}
                 alt={true}
+
+                hintText={"Ooh... I'm a hint!"}
             />
 
             <TextBox

@@ -96,6 +96,10 @@ export default function BigButton(props) {
 
                     borderRadius: 12,
                     alignItems: 'center',
+
+                    shadowOpacity: 0.25,
+                    shadowRadius: 4,
+                    elevation: 5,
                 }]}
             >
                 <View

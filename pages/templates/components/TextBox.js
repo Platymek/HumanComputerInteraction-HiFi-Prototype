@@ -1,6 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput } from 'react-native';
 
+import HintButton from './HintButton';
+
 /*
     - Textbox Component -
 
@@ -9,9 +11,29 @@ import { StyleSheet, Text, View, TextInput } from 'react-native';
     - title: text above text box
     - placeholder: placeholder text
     - (optional) alt: boolean, colour as red instead of green
+    - (optional) hintText: text which will appear in the hint modal
 */
 
 export default function TextBox(props) {
+
+    function RenderHint(props) {
+
+        if (props.text != undefined) {
+
+            return (
+
+                <View>
+
+                    <HintButton
+
+                        colors={props.colors}
+                        text={props.text}
+                        alt={props.alt}
+                    />
+                </View>
+            )
+        }
+    }
 
     return (
 
@@ -20,22 +42,37 @@ export default function TextBox(props) {
             paddingTop: 12,
             padding: 4,
         }}>
+            <View style={{
 
-            <Text style={{
 
-                fontSize: 16,
-                fontWeight: 'bold',
-
-                paddingLeft: 4,
-                paddingBottom: 4,
-
-                color: (props.alt == true
-                    ? props.colors[6]
-                    : props.colors[2]),
+                flexDirection: 'row',
+                flexWrap: 'wrap',
             }}>
 
-                {props.title}
-            </Text>
+                <Text style={{
+
+                    fontSize: 16,
+                    fontWeight: 'bold',
+
+                    paddingLeft: 4,
+                    paddingBottom: 4,
+                    paddingRight: 4,
+
+                    color: (props.alt == true
+                        ? props.colors[6]
+                        : props.colors[2]),
+                }}>
+
+                    {props.title}
+                </Text>
+
+                <RenderHint
+
+                    colors={props.colors}
+                    alt={props.alt}
+                    text={props.hintText}
+                />
+            </View>
 
             <TextInput
 
