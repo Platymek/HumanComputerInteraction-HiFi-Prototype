@@ -31,6 +31,8 @@ Under each component is listed the properties passed through as a parameter in '
 ### BigButton
 - title: text in big button
 - (optional) source: source of image
+- (optional) alt: changes to alternate colour when true
+- (optional) small: changes to small icon
 
 ### HyperLinkText
 - text: text in big button

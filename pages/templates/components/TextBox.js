@@ -8,6 +8,7 @@ import { StyleSheet, Text, View, TextInput } from 'react-native';
     - colors: color palette of page
     - title: text above text box
     - placeholder: placeholder text
+    - (optional) alt: boolean, colour as red instead of green
 */
 
 export default function TextBox(props) {
@@ -16,14 +17,21 @@ export default function TextBox(props) {
 
         <View style={{
 
+            paddingTop: 12,
             padding: 4,
         }}>
 
             <Text style={{
 
-                fontSize: 24,
+                fontSize: 16,
+                fontWeight: 'bold',
+
                 paddingLeft: 4,
-                color: props.colors[2],
+                paddingBottom: 4,
+
+                color: (props.alt == true
+                    ? props.colors[6]
+                    : props.colors[2]),
             }}>
 
                 {props.title}
@@ -42,11 +50,14 @@ export default function TextBox(props) {
                     paddingRight: 10,
 
                     width: 320,
-                    fontSize: 16,
+                    fontSize: 18,
 
                     borderWidth: 2,
-                    borderRadius: 4,
-                    borderColor: props.colors[3],
+                    borderRadius: 8,
+
+                    borderColor: (props.alt == true
+                        ? props.colors[5]
+                        : props.colors[3]),
                 }}
             />
 

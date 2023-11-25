@@ -4,7 +4,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import colors from './Colors'
-import HintButton from './pages/templates/components/HintButton'
+import BigButton from './pages/templates/components/BigButton';
+import TextBox from './pages/templates/components/TextBox';
 
 function TestHarness({ navigation, route }) {
 
@@ -20,19 +21,72 @@ function TestHarness({ navigation, route }) {
                 justifyContent: 'center'
             }}>
 
-            <Text>Hint Button:</Text>
+            <BigButton
 
-            <HintButton
-
-                text={"Hello! I'm in the modal!"}
                 colors={colors}
+                title={"Small Thumbnail!"}
+
+                onPress={() => {
+
+                    navigation.navigate("TestHarness2")
+                }}
+
+                source={require("./assets/icon.png")}
+                alt={true}
+                small={true}
             />
 
-            <HintButton
+            <BigButton
 
-                text={"Hello! I'm in the modal! Also, weirdly, I'm red?"}
                 colors={colors}
+                title={"Multi Line\nButton!?"}
+
+                onPress={() => {
+
+                    navigation.navigate("TestHarness2")
+                }}
+
+                source={require("./assets/icon.png")}
                 alt={true}
+                small={true}
+            />
+
+            <BigButton
+
+                colors={colors}
+                title="Bird Guide"
+                source={require("./assets/icon.png")}
+
+                onPress={() => {
+
+                    navigation.navigate("TestHarness2")
+                }}
+            />
+
+            <BigButton
+
+                colors={colors}
+                title="Hello"
+
+                onPress={() => {
+
+                    navigation.navigate("TestHarness2")
+                }}
+            />
+
+            <TextBox
+
+                colors={colors}
+                title={"Funny Monkey Goopy"}
+                placeholder={"Hello!"}
+                alt={true}
+            />
+
+            <TextBox
+
+                colors={colors}
+                title={"Funny Monkey Goopy"}
+                placeholder={"Hello!"}
             />
         </View>
     );
