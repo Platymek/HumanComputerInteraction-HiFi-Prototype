@@ -9,6 +9,7 @@ import BigButton from './pages/templates/components/BigButton';
 
 import SignUp from './pages/SignUp';
 import Admin from './pages/Admin';
+import Help from './pages/Help';
 
 function TestHarness({ navigation, route }) {
 
@@ -91,6 +92,18 @@ function App() {
 
                     name="TestHarness2"
                     component={TestHarness2}
+
+                    initialParams={{
+
+                        colors: colors
+                    }}
+                />
+                <Stack.Screen
+
+                    name="Help"
+                    component={Help}
+
+                    options={{ headerShown: false }}
 
                     initialParams={{
 
