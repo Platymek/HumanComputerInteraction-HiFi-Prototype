@@ -1,5 +1,5 @@
 import { Pressable } from 'react-native';
-import { Text, View, Button, StyleSheet, Image } from 'react-native';
+import { Text, View, Image } from 'react-native';
 
 /*
     - BigButton Component -
@@ -122,6 +122,7 @@ export default function BigButton(props) {
 
                             color: props.colors[1],
                             fontSize: 28,
+                            textAlign: 'center'
                         }}
                     >
                         {props.title}

@@ -1,12 +1,15 @@
-import * as React from 'react';
-import { View, Text } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, Modal } from 'react-native';
 
 import Account from './templates/Account';
 import TextBox from './templates/components/TextBox';
+import BigButton from './templates/components/BigButton';
 
 export default function SignUp({ navigation, route }) {
 
-    const { colors } = route.params
+    var { colors } = route.params
+
+    const [modalVisible, setModalVisible] = useState(false);
 
     return (
 
@@ -17,6 +20,95 @@ export default function SignUp({ navigation, route }) {
                 alignItems: 'center',
                 justifyContent: 'center'
             }}>
+
+            <Modal
+
+                visible={modalVisible}
+                transparent={true}
+
+                onRequestClose={() => {
+
+                    setModalVisible(!modalVisible)
+                }}
+            >
+                <View
+
+                    style={{
+
+                        flex: 1,
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        backgroundColor: '#f2f2f288'
+                    }}
+                >
+                    <View
+
+                        style={{
+
+                            borderRadius: 50,
+
+                            width: 300,
+                            margin: 20,
+                            backgroundColor: colors[1],
+                            padding: 10,
+                            alignItems: 'center',
+
+                            shadowOffset: {
+
+                                width: 0,
+                                height: 2,
+                            },
+
+                            shadowOpacity: 0.25,
+                            shadowRadius: 8,
+                            elevation: 8,
+                        }}
+                    >
+                        <Text
+
+                            style={{
+
+                                color: colors[2],
+                                fontSize: 24,
+                                margin: 16,
+                                marginTop: 32,
+                                marginBottom: 32,
+                            }}
+                        >
+                            <Text style={{ fontWeight: "bold" }}>We have sent an email to your inbox! </Text>
+                            Verify your email using the mail we just sent to your inbox. Your 1 hour session will not start immediately.
+                        </Text>
+
+                        <BigButton
+
+                            colors={colors}
+                            title={"I have verified my email"}
+
+                            onPress={() => {
+
+                                navigation.navigate("Dashboard")
+                            }}
+                        />
+
+                        <BigButton
+
+                            colors={colors}
+                            title={"Cancel"}
+                            alt={true}
+
+                            onPress={() => {
+
+                                setModalVisible(!modalVisible)
+                            }}
+                        />
+
+                        <View style={{
+
+                            padding: 12,
+                        }} />
+                    </View>
+                </View>
+            </Modal>
 
             <Account
 
@@ -32,7 +124,7 @@ export default function SignUp({ navigation, route }) {
 
                 onButtonPress={() => {
 
-                    navigation.navigate("TestHarness2")
+                    setModalVisible(!modalVisible)
                 }}
             >
                 <Text style={{
