@@ -5,10 +5,10 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import colors from './Colors'
 
-import Account from './pages/templates/Account';
-import TextBox from './pages/templates/components/TextBox';
 import BigButton from './pages/templates/components/BigButton';
-import HyperLinkText from './pages/templates/components/HyperLinkText';
+
+import SignUp from './pages/SignUp';
+import Admin from './pages/Admin';
 
 function TestHarness({ navigation, route }) {
 
@@ -24,65 +24,17 @@ function TestHarness({ navigation, route }) {
                 justifyContent: 'center'
             }}>
 
-            <Account
+            <BigButton
 
                 colors={colors}
 
-                buttonTitle={"Sign Up"}
-                navigation={navigation}
-                alt={false}
+                title={"Open Sign Up page"}
 
-                hyperText={"Looking for the admin page?"}
-                linkText={"Login as admin."}
-                hyperPage={"TestHarness2"}
+                onPress={() => {
 
-                onButtonPress={() => {
-
-                    navigation.navigate("TestHarness2")
+                    navigation.navigate("SignUp")
                 }}
-            >
-                <Text style={{
-
-                    padding: 4,
-                    fontSize: 18,
-
-                    color: colors[2],
-                }}>
-                    <Text style={{ fontWeight: "bold" }}>Enter your details to sign up for the Big Garden Birdwatch! </Text>
-                    <Text>Entering your details does not start your 1 hour session.</Text>
-                </Text>
-
-                <View style={{
-
-                    padding: 4,
-                }} />
-
-                <TextBox
-
-                    colors={colors}
-                    title={"Email"}
-                    placeholder={"example@mail.com"}
-                    alt={false}
-                />
-
-                <TextBox
-
-                    colors={colors}
-                    title={"Postcode"}
-                    placeholder={"AB1 2CD"}
-                    alt={false}
-                />
-
-                <TextBox
-
-                    colors={colors}
-                    title={"Address"}
-                    placeholder={"House Name, Street, City"}
-                    hintText={"Only one session can be started for every household"}
-                    alt={false}
-                />
-
-            </Account>
+            />
         </View>
     );
 }
@@ -139,6 +91,32 @@ function App() {
 
                     name="TestHarness2"
                     component={TestHarness2}
+
+                    initialParams={{
+
+                        colors: colors
+                    }}
+                />
+
+                <Stack.Screen
+
+                    name="SignUp"
+                    component={SignUp}
+
+                    options={{ headerShown: false }}
+
+                    initialParams={{
+
+                        colors: colors
+                    }}
+                />
+
+                <Stack.Screen
+
+                    name="Admin"
+                    component={Admin}
+
+                    options={{ headerShown: false }}
 
                     initialParams={{
 

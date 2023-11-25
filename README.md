@@ -17,7 +17,13 @@ None exist yet.
 Under each tempplate is listed the properties passed through as a parameter in 'props'. Every component must have the following values in the props dictionary, on top of those also listed:
 - colors: the site's colour scheme in list format
   
-None exist yet.
+### Account
+- buttonName: title of button
+- navigation: navigation object
+- onButtonPress: function on button press
+- hyperText: text of hyperlink
+- hyperLink: text of link in hyperlink
+- hyperPage: page the hyperlink takes the user to
 
 
 ## Components
