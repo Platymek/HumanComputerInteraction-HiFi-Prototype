@@ -39,11 +39,9 @@ export default function TextBox(props) {
 
         <View style={{
 
-            paddingTop: 12,
-            padding: 4,
+            padding: 12,
         }}>
             <View style={{
-
 
                 flexDirection: 'row',
                 flexWrap: 'wrap',
@@ -83,10 +81,8 @@ export default function TextBox(props) {
                 style={{
 
                     padding: 2,
-                    paddingLeft: 10,
-                    paddingRight: 10,
-
-                    width: 320,
+                    paddingLeft: 12,
+                    paddingRight: 12,
                     fontSize: 18,
 
                     borderWidth: 2,

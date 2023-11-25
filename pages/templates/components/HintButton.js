@@ -49,9 +49,7 @@ export default function HintButton(props) {
 
                         style={{
 
-                            borderWidth: 3,
-                            borderColor: getColor(),
-                            borderRadius: 4,
+                            borderRadius: 50,
 
                             width: 300,
                             margin: 20,
@@ -66,8 +64,8 @@ export default function HintButton(props) {
                             },
 
                             shadowOpacity: 0.25,
-                            shadowRadius: 4,
-                            elevation: 5,
+                            shadowRadius: 8,
+                            elevation: 8,
                         }}
                     >
                         <View style={[{
@@ -113,7 +111,7 @@ export default function HintButton(props) {
                                 setModalVisible(!modalVisible)
                             }}
 
-                            alt={true}
+                            alt={props.alt}
                         />
                     </View>
                 </View>
@@ -129,6 +127,8 @@ export default function HintButton(props) {
                     { backgroundColor: getColor() },
                     styles.questionBorder
                 ]}
+
+                hitSlop={8}
             >
                 <Text
 
