@@ -1,8 +1,6 @@
 import React from 'react';
 import { Pressable, Text, View, StyleSheet, Image } from 'react-native';
-import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome'; 
-import { Linking } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+
 
 const HelpButton = ({ onPress }) => { 
   
