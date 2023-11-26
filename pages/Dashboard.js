@@ -3,10 +3,22 @@ import { View, Text, ScrollView } from 'react-native';
 import HelpButton from './templates/components/HelpButton';
 import GuideButton from './templates/components/GuideButton';
 import BigButton from './templates/components/BigButton';
+import Help from './Help';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-export default function Dashboard({ route }) {
+
+
+export default function Dashboard({ route, navigation }) {
   const { colors } = route.params;
-
+  const Stack = createNativeStackNavigator();
+  
+  const goToHelpPage = () => {
+    // Handle navigation logic here
+    navigation.navigate("Help");
+    console.log('Navigating to help page');
+  };
+  
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 16 }}>
       <ScrollView
@@ -46,7 +58,7 @@ export default function Dashboard({ route }) {
                 colors={colors}
                 title={"Start Session"}
                 onPress={() => {
-                     navigation.navigate("") // the page it would go to after this is not there yet
+                     navigation.navigate("Help") // the page it would go to is not there yet
                      console.log("Starting session")
                 }}
             />
@@ -76,11 +88,22 @@ export default function Dashboard({ route }) {
                 Don't know how the count works? Or have any other questions?
               </Text>
               <br />
-              <HelpButton/>
+              <HelpButton
+              onPress={goToHelpPage}
+              />
             </View>
+            <Stack.Screen
 
-            
+                    name="Help"
+                    component={Help}
 
+                    options={{ headerShown: false }}
+
+                    initialParams={{
+
+                        colors: colors
+                    }}
+                />
             {/*more FAQs*/}
           </View>
         </View>
