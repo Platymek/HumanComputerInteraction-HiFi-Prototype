@@ -104,7 +104,7 @@ export default function Dashboard({ route, navigation }) {
                         colors: colors
                     }}
                 />
-            {/*more FAQs*/}
+
           </View>
         </View>
       </ScrollView>
