@@ -1,4 +1,4 @@
-import * as React from 'react';
+﻿import * as React from 'react';
 import { View, Text, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import colors from './Colors'
 
 import BigButton from './pages/templates/components/BigButton';
+import Header from './pages/templates/components/Header'; 
 
 import SignUp from './pages/SignUp';
 import Admin from './pages/Admin';
@@ -19,22 +20,32 @@ function TestHarness({ navigation, route }) {
         <View
             style={{
 
-                flex: 1,
                 alignItems: 'center',
                 justifyContent: 'center'
             }}>
 
-            <BigButton
+            <Header
 
                 colors={colors}
-
-                title={"Open Sign Up page"}
-
-                onPress={() => {
-
-                    navigation.navigate("SignUp")
-                }}
+                navigation={navigation}
             />
+
+            <View
+                style={{
+
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                }}
+            >
+                <Text
+                    style={{
+
+                        fontSize: 18,
+                    }}
+                >
+                    May I draw your attention to the header please...?
+                </Text>
+            </View>
         </View>
     );
 }
@@ -52,8 +63,6 @@ function TestHarness2({ navigation, route }) {
                 alignItems: 'center',
                 justifyContent: 'center'
             }}>
-
-            <Text>I'm the new Page!</Text>
         </View>
     );
 }
@@ -69,8 +78,10 @@ function App() {
             <Stack.Navigator
 
                 initialRouteName="TestHarness"
+
                 screenOptions={{
-                    headerShown: true
+
+                    headerShown: false,
                 }}
             >
 
@@ -79,11 +90,9 @@ function App() {
                     name="TestHarness"
                     component={TestHarness}
 
-                    options={{ headerShown:false }}
-
                     initialParams={{
 
-                        colors: colors
+                        colors: colors,
                     }}
                 />
 
@@ -94,7 +103,7 @@ function App() {
 
                     initialParams={{
 
-                        colors: colors
+                        colors: colors,
                     }}
                 />
 
@@ -102,8 +111,6 @@ function App() {
 
                     name="SignUp"
                     component={SignUp}
-
-                    options={{ headerShown: false }}
 
                     initialParams={{
 
@@ -115,8 +122,6 @@ function App() {
 
                     name="Admin"
                     component={Admin}
-
-                    options={{ headerShown: false }}
 
                     initialParams={{
 

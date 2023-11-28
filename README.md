@@ -12,7 +12,6 @@ Under each pages is listed the properties passed through as a parameter in 'prop
 None exist yet.
 
 
-
 ## Templates
 Under each tempplate is listed the properties passed through as a parameter in 'props'. Every component must have the following values in the props dictionary, on top of those also listed:
 - colors: the site's colour scheme in list format
