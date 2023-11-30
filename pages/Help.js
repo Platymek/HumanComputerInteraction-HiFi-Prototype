@@ -78,7 +78,32 @@ export default function HelpPage({ route }) {
               </Text>
             </View>
 
-            
+            {/* FAQ 3 */}
+            <View style={{ marginBottom: 16 }}>
+              <Text style={{ fontSize: 18, color: colors[2] }}>
+                <Text style={{ fontWeight: 'bold' }}>Q:</Text>
+                {' '}
+                How do I add a bird I saw to the list?
+              </Text>
+              <Text style={{ fontSize: 16, color: colors[2] }}>
+                A: once you have started a session, press the 'add new bird' button to select a new bird to add. alternatively,  
+                If you want to add to a bird already on the list, press on the + next to the bird on your list.
+              </Text>
+            </View>
+
+            {/* FAQ 4 */}
+            <View style={{ marginBottom: 16 }}>
+              <Text style={{ fontSize: 18, color: colors[2] }}>
+                <Text style={{ fontWeight: 'bold' }}>Q:</Text>
+                {' '}
+                How do I find out more about a bird?
+              </Text>
+              <Text style={{ fontSize: 16, color: colors[2] }}>
+                A: Go to the Bird Guide page by pressing on the bird guide icon and the press on the
+                see info link next to the bird you want to know more about.
+              </Text>
+            </View>
+
 
             {/*more FAQs*/}
           </View>
