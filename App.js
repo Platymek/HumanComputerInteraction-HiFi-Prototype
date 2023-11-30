@@ -21,7 +21,8 @@ function TestHarness({ navigation, route }) {
             style={{
 
                 alignItems: 'center',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                flex: 1,
             }}>
 
             <Header
@@ -35,6 +36,7 @@ function TestHarness({ navigation, route }) {
 
                     alignItems: 'center',
                     justifyContent: 'center',
+                    flex: 1,
                 }}
             >
                 <Text
@@ -45,6 +47,18 @@ function TestHarness({ navigation, route }) {
                 >
                     May I draw your attention to the header please...?
                 </Text>
+
+                <BigButton
+
+                    colors={colors}
+
+                    title={"Open Sign Up page"}
+
+                    onPress={() => {
+
+                        navigation.navigate("TestHarness2")
+                    }}
+                />
             </View>
         </View>
     );
@@ -62,7 +76,31 @@ function TestHarness2({ navigation, route }) {
                 flex: 1,
                 alignItems: 'center',
                 justifyContent: 'center'
-            }}>
+            }}
+        >
+            <Header
+
+                colors={colors}
+                navigation={navigation}
+            />
+
+            <View
+                style={{
+
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flex: 1,
+                }}
+            >
+                <Text
+                    style={{
+
+                        fontSize: 18,
+                    }}
+                >
+                    Try pressing back!
+                </Text>
+            </View>
         </View>
     );
 }

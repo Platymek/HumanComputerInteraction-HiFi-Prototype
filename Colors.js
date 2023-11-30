@@ -14,7 +14,7 @@ const colors = [
     "#0F9D58",
 
     // grey (backdrops)
-    "#A6A6A6",
+    "#ededed",
 
     // red (alt colour)
     "#9F0F0F",
