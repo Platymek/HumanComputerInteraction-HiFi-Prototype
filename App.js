@@ -34,7 +34,7 @@ function TestHarness({ navigation, route }) {
 
                 onPress={() => {
 
-                    navigation.navigate("SignUp")
+                    navigation.navigate("Dashboard")
                 }}
             />
         </View>

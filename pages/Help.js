@@ -33,17 +33,17 @@ export default function HelpPage({ route }) {
             <Text style={{ fontSize: 18, color: colors[2] }}>
               <Text style={{ fontWeight: 'bold' }}>How do I take part in the Big Garden Birdwatch?</Text>
               {' '}
-              <br />
-              <br />
+              {"\n"}
+              {"\n"}
               It's easy - you simply watch the birds in your garden or local park for one hour, and record what you see. 
-              <br />
-              <br />
+              {"\n"}
+              {"\n"}
               1. Count the birds you see in your garden, from your balcony or in your local park for one hour over the Big Garden Birdwatch weekend. It doesn't matter what time of day you do your Birdwatch, but you’ll see more birds if you do it first thing in the morning. 
-              <br />
-              <br />
+              {"\n"}
+              {"\n"}
               2. Only include birds that land, not those flying over. Count the highest number of each species you see at any one time. For example, if you saw four Starlings together, then two Starlings later, your final count will be four (not six). 
-              <br />
-              <br />
+              {"\n"}
+              {"\n"}
               3. Go online and tell us what you've seen! Even if you didn't see anything at all in your hour, please let us know. It's all really useful information. 
             </Text>
           </View>

@@ -1,49 +1,27 @@
 import React from 'react';
 import { Pressable, Text, View, StyleSheet, Image } from 'react-native';
-import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome'; 
+import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
+import BigButton from './BigButton';
 
-const GuideButton = () => {
-  const goToGuidePage = () => {
-    //guide page link would go here
-    console.log('Navigating to guide page');
-  };
+export default function GuideButton(props) {
 
-  return (
-    <Pressable onPress={goToGuidePage} style={styles.button}>
-      <View style={styles.buttonContent}>
-        <br />
-      <Text style={styles.text}>Bird Guide</Text>
-        <Image
-          source={require('./images/guide.png')}
-          style={styles.image}
-        />
-      </View>
-    </Pressable>
-  );
-};
+    return (
 
-const styles = StyleSheet.create({
-  button: {
-    backgroundColor: '#0e9c58',
-    borderRadius: 45,
-    padding: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: 145,
-    height: 145,
-  },
-  text: {
-    color: 'white',
-    textAlign: 'center',
-    marginBottom: 10, // Adjust the margin bottom as needed
-    fontSize: 20
-  },
-  image: {
-    width: 100, 
-    height: 100, 
-    resizeMode: 'contain', 
-  },
-  
-});
+        <View style={{
 
-export default GuideButton;
+            flex: 1,
+        }}>
+            <BigButton
+
+                colors={props.colors}
+                source={require('./images/guide.png')}
+                title={"Bird Guide"}
+
+                onPress={() => {
+
+                    props.navigation.navigate("Guide");
+                }}
+            />
+        </View>
+    );
+}
