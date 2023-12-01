@@ -160,6 +160,7 @@ export default function Header(props) {
                             fontWeight: "bold",
                             fontSize: 14,
                             marginBottom: -4,
+                            color: props.colors[2],
                         }}
                     >
 
@@ -172,6 +173,7 @@ export default function Header(props) {
                         style={{
 
                             fontSize: 32,
+                            color: props.colors[2],
                         }}
                     >
 
