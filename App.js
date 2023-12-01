@@ -1,4 +1,4 @@
-import * as React from 'react';
+﻿import * as React from 'react';
 import { View, Text, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import colors from './Colors'
 
 import BigButton from './pages/templates/components/BigButton';
+import Header from './pages/templates/components/Header'; 
 
 import SignUp from './pages/SignUp';
 import Admin from './pages/Admin';
@@ -21,22 +22,47 @@ function TestHarness({ navigation, route }) {
         <View
             style={{
 
-                flex: 1,
                 alignItems: 'center',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                flex: 1,
             }}>
 
-            <BigButton
+            <Header
 
                 colors={colors}
-
-                title={"Open Sign Up page"}
-
-                onPress={() => {
-
-                    navigation.navigate("Dashboard")
-                }}
+                navigation={navigation}
             />
+
+            <View
+                style={{
+
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flex: 1,
+
+                }}
+            >
+                <Text
+                    style={{
+
+                        fontSize: 18,
+                    }}
+                >
+                    May I draw your attention to the header please...?
+                </Text>
+
+                <BigButton
+
+                    colors={colors}
+
+                    title={"Open Sign Up page"}
+
+                    onPress={() => {
+
+                        navigation.navigate("TestHarness2")
+                    }}
+                />
+            </View>
         </View>
     );
 }
@@ -53,9 +79,31 @@ function TestHarness2({ navigation, route }) {
                 flex: 1,
                 alignItems: 'center',
                 justifyContent: 'center'
-            }}>
+            }}
+        >
+            <Header
 
-            <Text>I'm the new Page!</Text>
+                colors={colors}
+                navigation={navigation}
+            />
+
+            <View
+                style={{
+
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flex: 1,
+                }}
+            >
+                <Text
+                    style={{
+
+                        fontSize: 18,
+                    }}
+                >
+                    Try pressing back!
+                </Text>
+            </View>
         </View>
     );
 }
@@ -71,8 +119,10 @@ function App() {
             <Stack.Navigator
 
                 initialRouteName="TestHarness"
+
                 screenOptions={{
-                    headerShown: true
+
+                    headerShown: false,
                 }}
             >
 
@@ -81,11 +131,9 @@ function App() {
                     name="TestHarness"
                     component={TestHarness}
 
-                    options={{ headerShown:false }}
-
                     initialParams={{
 
-                        colors: colors
+                        colors: colors,
                     }}
                 />
 
@@ -96,7 +144,7 @@ function App() {
 
                     initialParams={{
 
-                        colors: colors
+                        colors: colors,
                     }}
                 />
                 <Stack.Screen
@@ -130,8 +178,6 @@ function App() {
                     name="SignUp"
                     component={SignUp}
 
-                    options={{ headerShown: false }}
-
                     initialParams={{
 
                         colors: colors
@@ -142,8 +188,6 @@ function App() {
 
                     name="Admin"
                     component={Admin}
-
-                    options={{ headerShown: false }}
 
                     initialParams={{
 
