@@ -16,7 +16,8 @@ export default function Dashboard({ navigation, route }) {
                 flex: 1,
                 alignItems: 'center',
                 justifyContent: 'center',
-                padding: 16
+                padding: 16,
+                backgroundColor: colors[7], 
             }}
         >
             {/* Title and start session section */}

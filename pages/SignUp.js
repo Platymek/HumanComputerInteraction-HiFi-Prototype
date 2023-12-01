@@ -18,7 +18,8 @@ export default function SignUp({ navigation, route }) {
 
                 flex: 1,
                 alignItems: 'center',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                backgroundColor: colors[7],
             }}>
 
             <Modal
@@ -38,7 +39,7 @@ export default function SignUp({ navigation, route }) {
                         flex: 1,
                         justifyContent: 'center',
                         alignItems: 'center',
-                        backgroundColor: '#f2f2f288'
+                        backgroundColor: colors[7] + '88',
                     }}
                 >
                     <View
@@ -86,6 +87,7 @@ export default function SignUp({ navigation, route }) {
 
                             onPress={() => {
 
+                                setModalVisible(!modalVisible)
                                 navigation.navigate("Dashboard")
                             }}
                         />

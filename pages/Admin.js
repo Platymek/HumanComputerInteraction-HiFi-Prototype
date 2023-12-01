@@ -15,7 +15,8 @@ export default function Admin({ navigation, route }) {
 
                 flex: 1,
                 alignItems: 'center',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                backgroundColor: colors[7], 
             }}>
 
             <Account
@@ -26,8 +27,8 @@ export default function Admin({ navigation, route }) {
                 navigation={navigation}
                 alt={true}
 
-                hyperText={"Looking for the admin page?"}
-                linkText={"Login as admin."}
+                hyperText={"Not an admin? "}
+                linkText={"Sign Up as user."}
                 hyperPage={"SignUp"}
 
                 onButtonPress={() => {
@@ -42,7 +43,7 @@ export default function Admin({ navigation, route }) {
 
                     color: colors[6],
                 }}>
-                    <Text style={{ fontWeight: "bold" }}>Enter your details to see the results page early.</Text>
+                    <Text style={{ fontWeight: "bold" }}>Enter your details to see the results page early. </Text>
                     <Text>The page shows the current data displayed by graphs and a downloadable .csv file.</Text>
                 </Text>
 

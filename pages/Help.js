@@ -5,7 +5,7 @@ export default function HelpPage({ route }) {
   const { colors } = route.params;
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 16 }}>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 16, backgroundColor: colors[7], }}>
       <ScrollView
       style={{ flex: 1, maxHeight: 614 }}
       contentContainerStyle={{ flexGrow: 1, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 16, }}

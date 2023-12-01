@@ -27,12 +27,6 @@ function TestHarness({ navigation, route }) {
                 flex: 1,
             }}>
 
-            <Header
-
-                colors={colors}
-                navigation={navigation}
-            />
-
             <View
                 style={{
 
@@ -55,11 +49,11 @@ function TestHarness({ navigation, route }) {
 
                     colors={colors}
 
-                    title={"Open Sign Up page"}
+                    title={"Start"}
 
                     onPress={() => {
 
-                        navigation.navigate("TestHarness2")
+                        navigation.navigate("SignUp")
                     }}
                 />
             </View>
@@ -139,7 +133,7 @@ function App() {
 
                 <Stack.Screen
 
-                    name="TestHarness2"
+                    name="Home"
                     component={TestHarness2}
 
                     initialParams={{

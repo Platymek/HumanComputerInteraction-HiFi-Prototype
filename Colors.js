@@ -14,13 +14,16 @@ const colors = [
     "#0F9D58",
 
     // grey (backdrops)
-    "#ededed",
+    "#ababab",
 
     // red (alt colour)
     "#9F0F0F",
 
     // red (dark alt colour)
     "#630a28",
+
+    // light grey (background colour)
+    "#ededed",
 ]
 
 export default colors
