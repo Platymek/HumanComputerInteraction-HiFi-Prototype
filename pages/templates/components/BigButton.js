@@ -19,11 +19,7 @@ export default function BigButton(props) {
 
         var size = props.small == true
             ? 50
-            : 110;
-
-        var margin = props.small == true
-            ? 0
-            : 12;
+            : 75;
 
         var marginLeft = props.small == true
             ? 24
@@ -49,8 +45,6 @@ export default function BigButton(props) {
 
                             width: size,
                             height: size,
-                            marginTop: margin,
-                            marginBottom: margin,
                             marginLeft: marginLeft,
                         }}
                     />
@@ -110,8 +104,8 @@ export default function BigButton(props) {
                         alignItems: 'center',
                         justifyContent: 'center',
 
-                        marginLeft: 24,
-                        marginRight: 24,
+                        marginLeft: 12,
+                        marginRight: 12,
                     }}
                 >
                     <Text

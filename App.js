@@ -10,6 +10,8 @@ import Header from './pages/templates/components/Header';
 
 import SignUp from './pages/SignUp';
 import Admin from './pages/Admin';
+import Help from './pages/Help';
+import Dashboard from './pages/Dashboard';
 
 function TestHarness({ navigation, route }) {
 
@@ -37,6 +39,7 @@ function TestHarness({ navigation, route }) {
                     alignItems: 'center',
                     justifyContent: 'center',
                     flex: 1,
+
                 }}
             >
                 <Text
@@ -142,6 +145,31 @@ function App() {
                     initialParams={{
 
                         colors: colors,
+                    }}
+                />
+                <Stack.Screen
+
+                    name="Help"
+                    component={Help}
+
+                    options={{ headerShown: false }}
+
+                    initialParams={{
+
+                        colors: colors
+                    }}
+                />
+
+                <Stack.Screen
+
+                    name="Dashboard"
+                    component={Dashboard}
+
+                    options={{ headerShown: false }}
+
+                    initialParams={{
+
+                        colors: colors
                     }}
                 />
 
