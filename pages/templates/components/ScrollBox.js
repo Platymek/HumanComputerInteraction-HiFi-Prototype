@@ -1,4 +1,3 @@
-// ScrollingBox.js
 import React from 'react';
 import { ScrollView, View, StyleSheet } from 'react-native';
 
