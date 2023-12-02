@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import colors from './Colors'
+import birds from './Birds'
 
 import BigButton from './pages/templates/components/BigButton';
 import Header from './pages/templates/components/Header'; 
@@ -12,6 +13,8 @@ import SignUp from './pages/SignUp';
 import Admin from './pages/Admin';
 import Help from './pages/Help';
 import Dashboard from './pages/Dashboard';
+import Container from './pages/templates/components/Container';
+import BirdContainer from './pages/templates/components/BirdContainer';
 
 function TestHarness({ navigation, route }) {
 
@@ -25,38 +28,61 @@ function TestHarness({ navigation, route }) {
                 alignItems: 'center',
                 justifyContent: 'center',
                 flex: 1,
-            }}>
+                padding: 16,
+            }}
+        >
+            <Container 
 
-            <View
+                colors={colors}
+
                 style={{
-
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flex: 1,
-
+                    
+                    maxWidth: 500,
                 }}
             >
-                <Text
+
+                <Container 
+
+                    colors={colors} 
+                    grey={true}
+
                     style={{
 
-                        fontSize: 18,
+                        width:'100%',
                     }}
                 >
-                    May I draw your attention to the header please...?
-                </Text>
 
-                <BigButton
+                    <BirdContainer
 
-                    colors={colors}
+                        bird={birds[0]}
+                        colors={colors}
+                    >
 
-                    title={"Start"}
+                        <Text> 
+                            You can fit all sorts in here!
+                        </Text>
+                    </BirdContainer>
 
-                    onPress={() => {
+                    <BirdContainer
 
-                        navigation.navigate("SignUp")
-                    }}
-                />
-            </View>
+                        bird={birds[0]}
+                        colors={colors}
+                    >
+
+                        <Text> 
+                            even multiple things! 
+                        </Text>
+
+                        <BigButton
+
+                            colors={colors}
+
+                            title={"Start"}
+                        />
+                    </BirdContainer>
+
+                </Container>
+            </Container>
         </View>
     );
 }
