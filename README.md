@@ -50,3 +50,8 @@ Under each component is listed the properties passed through as a parameter in '
 ### HintButton Component
 text: text which will appear in the modal
 (optional) alt: boolean, colour as red instead of green
+
+
+### ScrollBox Component
+do this when calling ScrollingBox: 'color="#ededed"' (or the color varable)
+Add children between <></>
