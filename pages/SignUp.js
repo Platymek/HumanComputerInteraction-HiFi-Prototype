@@ -4,6 +4,7 @@ import { View, Text, Modal } from 'react-native';
 import Account from './templates/Account';
 import TextBox from './templates/components/TextBox';
 import BigButton from './templates/components/BigButton';
+import Container from './templates/components/Container';
 
 export default function SignUp({ navigation, route }) {
 
@@ -42,27 +43,14 @@ export default function SignUp({ navigation, route }) {
                         backgroundColor: colors[7] + '88',
                     }}
                 >
-                    <View
+                    <Container
+
+                        colors={colors}
 
                         style={{
 
-                            borderRadius: 50,
-
-                            width: 300,
+                            maxWidth: 300,
                             margin: 20,
-                            backgroundColor: colors[1],
-                            padding: 10,
-                            alignItems: 'center',
-
-                            shadowOffset: {
-
-                                width: 0,
-                                height: 2,
-                            },
-
-                            shadowOpacity: 0.25,
-                            shadowRadius: 8,
-                            elevation: 8,
                         }}
                     >
                         <Text
@@ -96,19 +84,14 @@ export default function SignUp({ navigation, route }) {
 
                             colors={colors}
                             title={"Cancel"}
-                            alt={true}
+                            lite={true}
 
                             onPress={() => {
 
                                 setModalVisible(!modalVisible)
                             }}
                         />
-
-                        <View style={{
-
-                            padding: 12,
-                        }} />
-                    </View>
+                    </Container>
                 </View>
             </Modal>
 
@@ -120,7 +103,7 @@ export default function SignUp({ navigation, route }) {
                 navigation={navigation}
                 alt={false}
 
-                hyperText={"Looking for the admin page?"}
+                hyperText={"Looking for the admin page? "}
                 linkText={"Login as admin."}
                 hyperPage={"Admin"}
 

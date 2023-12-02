@@ -40,6 +40,7 @@ export default function TextBox(props) {
         <View style={{
 
             padding: 12,
+            width: '100%',
         }}>
             <View style={{
 

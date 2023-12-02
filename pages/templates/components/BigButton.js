@@ -94,6 +94,7 @@ export default function BigButton(props) {
         <View style={{
 
             padding: 4,
+            width: '100%',
         }}>
 
             <Pressable

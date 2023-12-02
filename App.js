@@ -116,8 +116,7 @@ function App() {
 
             <Stack.Navigator
 
-                initialRouteName="TestHarness"
-
+                initialRouteName="SignUp"
                 screenOptions={{
 
                     headerShown: false,

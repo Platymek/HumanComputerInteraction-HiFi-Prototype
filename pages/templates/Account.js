@@ -3,6 +3,7 @@ import { Text, View, Button, StyleSheet, Image } from 'react-native';
 
 import BigButton from './components/BigButton';
 import HyperLinkText from './components/HyperLinkText';
+import Container from './components/Container';
 
 /*
     - BigButton Component -
@@ -21,82 +22,76 @@ export default function Account(props) {
 
     return (
 
-        <View style={{
+        <View 
+            style={{ 
 
-            marginTop: 24,
-            marginBottom: 24,
+                padding: 16,
+                maxWidth: 500,
+                width:'100%'
+            }}
+        >
+            <Container 
 
-            padding: 16,
-
-            width: 340,
-            backgroundColor: props.colors[1],
-            borderRadius: 50,
-
-            shadowOpacity: 0.1,
-            shadowRadius: 6,
-            elevation: 6,
-        }}>
-            <View
-
-                style={{
-
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                }}
+                colors={props.colors}
             >
-                <Image
-
-                    source={require("../../assets/rspb.png")}
+                <View
 
                     style={{
 
-                        width: 50,
-                        height: 50,
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                    }}
+                >
+                    <Image
+
+                        source={require("../../assets/rspb.png")}
+
+                        style={{
+
+                            width: 50,
+                            height: 50,
+                        }}
+                    />
+                </View>
+
+                <View style={{width:'100%'}}>
+                    {props.children}
+                </View>
+
+
+                <View style={{
+
+                    padding: 4,
+                }} />
+
+                <BigButton
+
+                    colors={props.colors}
+                    title={props.buttonTitle}
+
+                    onPress={props.onButtonPress}
+
+                    alt={props.alt}
+                />
+
+                <View style={{
+
+                    padding: 12,
+                }} />
+
+                <HyperLinkText
+
+                    colors={props.colors}
+                    text={props.hyperText}
+                    link={props.linkText}
+                    alt={!props.alt}
+
+                    onPress={() => {
+
+                        props.navigation.navigate(props.hyperPage)
                     }}
                 />
-            </View>
-
-
-            {props.children}
-
-
-            <View style={{
-
-                padding: 4,
-            }} />
-
-            <BigButton
-
-                colors={props.colors}
-                title={props.buttonTitle}
-
-                onPress={props.onButtonPress}
-
-                alt={props.alt}
-            />
-
-            <View style={{
-
-                padding: 12,
-            }} />
-
-            <HyperLinkText
-
-                colors={props.colors}
-                text={props.hyperText}
-                link={props.linkText}
-                alt={!props.alt}
-
-                onPress={() => {
-
-                    props.navigation.navigate(props.hyperPage)
-                }}
-            />
-
-            <View style={{
-
-                padding: 12,
-            }} />
+            </Container>
         </View>
     );
 }
