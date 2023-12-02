@@ -14,7 +14,6 @@ import Admin from './pages/Admin';
 import Help from './pages/Help';
 import Dashboard from './pages/Dashboard';
 import Container from './pages/templates/components/Container';
-import BirdContainer from './pages/templates/components/BirdContainer';
 
 function TestHarness({ navigation, route }) {
 
@@ -22,66 +21,45 @@ function TestHarness({ navigation, route }) {
 
     return (
 
-        <View
+        <View 
             style={{
 
                 alignItems: 'center',
                 justifyContent: 'center',
-                flex: 1,
-                padding: 16,
+                flex:1,
             }}
         >
-            <Container 
+            <Container colors={colors}>
+                <BigButton
 
-                colors={colors}
+                    colors={colors}
 
-                style={{
-                    
-                    maxWidth: 500,
-                }}
-            >
+                    title={"Hello"}
 
-                <Container 
+                    onPress={() => navigation.navigate("TestHarness2")}
+                />
+                <BigButton
 
-                    colors={colors} 
-                    grey={true}
+                    colors={colors}
 
-                    style={{
+                    title={"Hello"}
+                    alt={true}
+                />
+                <BigButton
 
-                        width:'100%',
-                    }}
-                >
+                    colors={colors}
 
-                    <BirdContainer
+                    title={"Hello"}
+                    lite={true}
+                />
+                <BigButton
 
-                        bird={birds[0]}
-                        colors={colors}
-                    >
+                    colors={colors}
 
-                        <Text> 
-                            You can fit all sorts in here!
-                        </Text>
-                    </BirdContainer>
-
-                    <BirdContainer
-
-                        bird={birds[0]}
-                        colors={colors}
-                    >
-
-                        <Text> 
-                            even multiple things! 
-                        </Text>
-
-                        <BigButton
-
-                            colors={colors}
-
-                            title={"Start"}
-                        />
-                    </BirdContainer>
-
-                </Container>
+                    title={"Hello"}
+                    alt={true}
+                    lite={true}
+                />
             </Container>
         </View>
     );
@@ -159,7 +137,7 @@ function App() {
 
                 <Stack.Screen
 
-                    name="Home"
+                    name="TestHarness2"
                     component={TestHarness2}
 
                     initialParams={{
