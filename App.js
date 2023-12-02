@@ -12,11 +12,17 @@ import SignUp from './pages/SignUp';
 import Admin from './pages/Admin';
 import Help from './pages/Help';
 import Dashboard from './pages/Dashboard';
-import ScrollingBox from './pages/templates/components/ScrollBox'
+import ScrollingBox from './pages/templates/components/ScrollBox';
+import ToggleButton from './pages/templates/components/ToggleButton';
 
 function TestHarness({ navigation, route }) {
 
     const { colors } = route.params
+
+    const handleToggle = (isToggled) => {
+        console.log('Button is toggled:', isToggled);
+      };
+
 
     return (
 
@@ -61,53 +67,9 @@ function TestHarness({ navigation, route }) {
                     }}
                 />
 
-                <Text>Other content</Text>
-                <ScrollingBox color="#ededed">
-                <BigButton
-
-                    colors={colors}
-
-                    title={"Start"}
-
-                    onPress={() => {
-
-                        navigation.navigate("SignUp")
-                    }}
-                />
-                <BigButton
-
-                    colors={colors}
-
-                    title={"Start"}
-
-                    onPress={() => {
-
-                        navigation.navigate("SignUp")
-                    }}
-                />
-                <BigButton
-
-                    colors={colors}
-
-                    title={"Start"}
-
-                    onPress={() => {
-
-                        navigation.navigate("SignUp")
-                    }}
-                />
-                <BigButton
-
-                    colors={colors}
-
-                    title={"Start"}
-
-                    onPress={() => {
-
-                        navigation.navigate("SignUp")
-                    }}
-                />
-                </ScrollingBox>
+                
+                <ToggleButton label="Toggle Me" onToggle={handleToggle} />
+                
 
             </View>
         </View>

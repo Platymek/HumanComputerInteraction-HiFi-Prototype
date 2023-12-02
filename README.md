@@ -55,3 +55,6 @@ text: text which will appear in the modal
 ### ScrollBox Component
 do this when calling ScrollingBox: 'color="#ededed"' (or the color varable)
 Add children between <></>
+
+### ToggleButton COmponent
+the const handletoggle must be in the place where the toggle button is used
