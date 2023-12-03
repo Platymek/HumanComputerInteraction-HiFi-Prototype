@@ -21,9 +21,6 @@ export default function BirdContainer(props) {
             style={{
 
                 borderRadius: 20,
-                margin: 8,
-                marginLeft: 16,
-                marginRight: 16,
             }}
         >
             <View style={{
@@ -68,8 +65,6 @@ export default function BirdContainer(props) {
                     justifyContent: 'flex-start',
                     alignItems: 'center',
                     width:'100%',
-
-                    marginTop: 8,
                 }}
             >
                 {props.children}

@@ -72,7 +72,6 @@ Allows children
 - grey: boolean, is grey with no shadow
 
 ### BirdContainer
-- colors: color palette of page
 - bird: bird class
 
 ### AddButton
