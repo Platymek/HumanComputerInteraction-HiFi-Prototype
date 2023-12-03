@@ -1,9 +1,9 @@
-﻿import * as React from 'react';
-import { View, Text, Image } from 'react-native';
+﻿import { useState } from 'react';
+import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import colors from './Colors'
+import lightColors from './Colors'
 import birds from './Birds'
 
 import BigButton from './pages/templates/components/BigButton';
@@ -36,8 +36,9 @@ function TestHarness({ navigation, route }) {
 
                 style={{
 
+                    height:'100%',
                     maxHeight:200,
-                    maxWidth:400,
+                    maxWidth:350,
                 }}
             >
 
@@ -94,7 +95,6 @@ function TestHarness({ navigation, route }) {
                     />
                 </ScrollingBox>
             </Container>
-
         </View>
     );
 }
@@ -113,29 +113,6 @@ function TestHarness2({ navigation, route }) {
                 justifyContent: 'center'
             }}
         >
-            <Header
-
-                colors={colors}
-                navigation={navigation}
-            />
-
-            <View
-                style={{
-
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flex: 1,
-                }}
-            >
-                <Text
-                    style={{
-
-                        fontSize: 18,
-                    }}
-                >
-                    Try pressing back!
-                </Text>
-            </View>
         </View>
     );
 }
@@ -143,6 +120,10 @@ function TestHarness2({ navigation, route }) {
 const Stack = createNativeStackNavigator();
 
 function App() {
+
+    // check README for how birds are logged
+    const [log, setLog] = useState({});
+    const [colors, setColors] = useState(lightColors);
 
     return (
 

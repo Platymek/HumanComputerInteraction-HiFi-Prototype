@@ -5,11 +5,22 @@
 Pull and then type `npx install expo` or `npm install` and run using `npx expo start`
 
 
+## Data
+The format for data (e.g. the number of birds logged)
+
+### log
+This data logs the number of birds spotted for specified species in a dictionary
+index: the same number used for indexing the birds. This is so that the dictionary can also be checked if the bird has already been added
+- population: the number spotted by the user
+
+### colors
+A simple list with every colour. Any new sets of colours must have an identical layout to that of the original Colors.js
+
+
 ## Pages
 Under each pages is listed the properties passed through as a parameter in 'props'. Every component must have the following values in the props dictionary, on top of those also listed:
 - colors: the site's colour scheme in list format
-  
-None exist yet.
+- navigation: used for navigating to other pages (or going back a page)
 
 
 ## Templates
