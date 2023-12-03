@@ -27,41 +27,22 @@ function TestHarness({ navigation, route }) {
 
                 alignItems: 'center',
                 justifyContent: 'center',
-                flex:1,
+                flex: 1,
             }}
         >
-            <Container colors={colors}>
-                <BigButton
+            <Container
+            
+                colors={colors}
 
-                    colors={colors}
+                style={{
 
-                    title={"Hello"}
+                    maxHeight:200,
+                    maxWidth:400,
+                }}
+            >
 
-                    onPress={() => navigation.navigate("TestHarness2")}
-                />
-                <BigButton
-                        fontSize: 18,
-                    }}
-                >
-                    May I draw your attention to the header please...?
-                </Text>
-                
-                
-                <BigButton
-
-                    colors={colors}
-
-                    title={"Start"}
-
-                    onPress={() => {
-
-                        navigation.navigate("SignUp")
-                    }}
-                />
-
-                <Text>Other content</Text>
-                <ScrollingBox color="#ededed">
-                  
+                <ScrollingBox colors={colors}>
+                    
                     <BigButton
 
                         colors={colors}
@@ -77,7 +58,7 @@ function TestHarness({ navigation, route }) {
                         alt={true}
                         lite={true}
                     />
-    <<<<<<< origin/ScrollBox
+
                     <BigButton
 
                         colors={colors}
@@ -112,13 +93,9 @@ function TestHarness({ navigation, route }) {
                         }}
                     />
                 </ScrollingBox>
+            </Container>
 
-            </View>
         </View>
-
-        
-            
-        
     );
 }
 
@@ -173,7 +150,7 @@ function App() {
 
             <Stack.Navigator
 
-                initialRouteName="SignUp"
+                initialRouteName="TestHarness"
                 screenOptions={{
 
                     headerShown: false,

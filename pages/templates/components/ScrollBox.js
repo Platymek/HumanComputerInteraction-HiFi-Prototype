@@ -1,38 +1,32 @@
 import React from 'react';
 import { ScrollView, View, StyleSheet } from 'react-native';
+import Container from './Container';
 
-export default function ScrollingBox({ children, color }) {
-  const boxStyle = {
-    borderColor: '#ededed', 
-    borderRadius: 15, 
-    borderWidth: 2, 
-    backgroundColor: color,
-    width: 220,
-    height: 220,
-  };
-
-  const contentContainerStyle = {
-    maxWidth: 220,
-    maxHeight: 220,
-    overflow: 'auto',
-  };
+export default function ScrollingBox(props) {
 
   return (
-    <ScrollView
-      contentContainerStyle={[styles.box, boxStyle]}
-      style={{ width: '100%', height: '100%' }}
+
+    <Container
+    
+      colors={props.colors}
+      grey={true}
+
+      style={{
+
+        flex: 1
+      }}
     >
-      <View style={[styles.content, contentContainerStyle]}>{children}</View>
-    </ScrollView>
+      <ScrollView
+
+        style={{
+
+          width:'100%',
+          height:'100%'
+        }}
+      >
+        {props.children}
+
+      </ScrollView>
+    </Container>
   );
 }
-
-const styles = StyleSheet.create({
-  box: {
-    padding: 10,
-    margin: 10,
-  },
-  content: {
-    flex: 1,
-  },
-});
