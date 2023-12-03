@@ -13,6 +13,7 @@ import Dashboard from './pages/Dashboard';
 import Container from './pages/templates/components/Container';
 import IndividualLog from './pages/templates/components/IndividualLog';
 import BirdContainer from './pages/templates/components/BirdContainer';
+import IndividualResult from './pages/templates/components/IndividualResult';
 
 function TestHarness({ 
 
@@ -38,19 +39,22 @@ function TestHarness({
 
                 style={{
 
-                    maxHeight:200,
                     maxWidth:350,
                 }}
             >
 
-                <IndividualLog 
+                <IndividualResult
                 
                     colors={colors}
+                    bird={birds[0]}
+                    place={1}
+                />
 
-                    birds={birds}
-                    birdIndex={0}
-                    log={log}
-                    setLog={setLog}
+                <IndividualResult
+                    
+                    colors={colors}
+                    bird={birds[0]}
+                    place={3}
                 />
 
             </Container>
