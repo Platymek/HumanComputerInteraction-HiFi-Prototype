@@ -52,6 +52,9 @@ Under each component is listed the properties passed through as a parameter in '
 text: text which will appear in the modal
 (optional) alt: boolean, colour as red instead of green
 
+### ScrollBox Component
+
+
 ### Container
 - style: additional style of container
 - grey: boolean, is grey with no shadow
