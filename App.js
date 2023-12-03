@@ -15,10 +15,15 @@ import Help from './pages/Help';
 import Dashboard from './pages/Dashboard';
 import ScrollingBox from './pages/templates/components/ScrollBox'
 import Container from './pages/templates/components/Container';
+import AddButton from './pages/templates/components/AddButton';
 
-function TestHarness({ navigation, route }) {
+function TestHarness({ 
 
-    const { colors } = route.params
+    navigation, 
+    route,
+}) {
+
+    const { colors, birds, log, setLog } = route.params
 
     return (
         
@@ -36,64 +41,41 @@ function TestHarness({ navigation, route }) {
 
                 style={{
 
-                    height:'100%',
                     maxHeight:200,
                     maxWidth:350,
                 }}
             >
 
-                <ScrollingBox colors={colors}>
-                    
-                    <BigButton
+                <AddButton 
+                
+                    colors={colors}
 
-                        colors={colors}
+                    birds={birds}
+                    birdIndex={2}
 
-                        title={"Hello"}
-                        lite={true}
-                    />
-                    <BigButton
+                    log={log}
+                    setLog={setLog}
 
-                        colors={colors}
+                    navigation={navigation}
 
-                        title={"Hello"}
-                        alt={true}
-                        lite={true}
-                    />
+                    full={false}
+                />
 
-                    <BigButton
+                <AddButton 
+                
+                    colors={colors}
 
-                        colors={colors}
+                    birds={birds}
+                    birdIndex={0}
 
-                        title={"Start"}
+                    log={log}
+                    setLog={setLog}
 
-                        onPress={() => {
+                    navigation={navigation}
 
-                            navigation.navigate("SignUp")
-                        }}
-                    />
-                    <BigButton
+                    full={true}
+                />
 
-                        colors={colors}
-
-                        title={"Start"}
-
-                        onPress={() => {
-
-                            navigation.navigate("SignUp")
-                        }}
-                    />
-                    <BigButton
-
-                        colors={colors}
-
-                        title={"Start"}
-
-                        onPress={() => {
-
-                            navigation.navigate("SignUp")
-                        }}
-                    />
-                </ScrollingBox>
             </Container>
         </View>
     );
@@ -122,7 +104,12 @@ const Stack = createNativeStackNavigator();
 function App() {
 
     // check README for how birds are logged
-    const [log, setLog] = useState({});
+    const [log, setLog] = useState({
+
+        [0]: 4,
+    });
+
+    // current list of colours (defaults to lightColors from Colors.js)
     const [colors, setColors] = useState(lightColors);
 
     return (
@@ -146,6 +133,9 @@ function App() {
                     initialParams={{
 
                         colors: colors,
+                        birds: birds,
+                        log: log,
+                        setLog: setLog,
                     }}
                 />
 

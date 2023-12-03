@@ -10,8 +10,9 @@ import { useState } from 'react';
     - onPress: function to be performed when the button is pressed
     - (optional) lite: boolean, changes to lite button
     - (optional) source: source of image
-    - (optional) alt: changes to alternate colour when true
-    - (optional) small: changes to small icon
+    - (optional) alt: boolean, changes to alternate colour when true
+    - (optional) small: boolean, changes to small icon
+    - (optional) compact: boolean, compact a button
 */
 
 export default function BigButton(props) {
@@ -89,13 +90,21 @@ export default function BigButton(props) {
         }
     }
 
+    function compactStyle(compact){
+
+        if (!compact){
+
+            return { width:'100%' }
+        }
+    }
+
     return (
 
-        <View style={{
+        <View style={[
 
-            padding: 4,
-            width: '100%',
-        }}>
+            { padding: 4, },
+            compactStyle(props.compact)
+        ]}>
 
             <Pressable
 

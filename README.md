@@ -11,7 +11,7 @@ The format for data (e.g. the number of birds logged)
 ### log
 This data logs the number of birds spotted for specified species in a dictionary
 index: the same number used for indexing the birds. This is so that the dictionary can also be checked if the bird has already been added
-- population: the number spotted by the user
+value: the number spotted by the user
 
 ### colors
 A simple list with every colour. Any new sets of colours must have an identical layout to that of the original Colors.js
@@ -53,6 +53,7 @@ Under each component is listed the properties passed through as a parameter in '
 - (optional) alt: changes to alternate colour when true
 - (optional) small: changes to small icon
 - (optional) alt: changes to alternate colour when true
+- (optional) compact: boolean, compact a button
 
 ### HyperLinkText
 - text: text in big button
@@ -64,7 +65,7 @@ text: text which will appear in the modal
 (optional) alt: boolean, colour as red instead of green
 
 ### ScrollBox Component
-
+Allows children
 
 ### Container
 - style: additional style of container
@@ -73,3 +74,11 @@ text: text which will appear in the modal
 ### BirdContainer
 - colors: color palette of page
 - bird: bird class
+
+### AddButton
+- birds: bird list
+- log: log list
+- setLog: set log list function
+- birdIndex: index of bird list
+- navigation: navigate class for navigating back home
+- (optional) full: boolean, displays 'Add to log +', not 'Add +'
