@@ -6,16 +6,14 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import lightColors from './Colors'
 import birds from './Birds'
 
-import BigButton from './pages/templates/components/BigButton';
-import Header from './pages/templates/components/Header'; 
-
 import SignUp from './pages/SignUp';
 import Admin from './pages/Admin';
 import Help from './pages/Help';
 import Dashboard from './pages/Dashboard';
-import ScrollingBox from './pages/templates/components/ScrollBox'
 import Container from './pages/templates/components/Container';
-import AddButton from './pages/templates/components/AddButton';
+import IndividualLog from './pages/templates/components/IndividualLog';
+import BirdContainer from './pages/templates/components/BirdContainer';
+import IndividualResult from './pages/templates/components/IndividualResult';
 
 function TestHarness({ 
 
@@ -41,39 +39,22 @@ function TestHarness({
 
                 style={{
 
-                    maxHeight:200,
                     maxWidth:350,
                 }}
             >
 
-                <AddButton 
+                <IndividualResult
                 
                     colors={colors}
-
-                    birds={birds}
-                    birdIndex={2}
-
-                    log={log}
-                    setLog={setLog}
-
-                    navigation={navigation}
-
-                    full={false}
+                    bird={birds[0]}
+                    place={1}
                 />
 
-                <AddButton 
-                
+                <IndividualResult
+                    
                     colors={colors}
-
-                    birds={birds}
-                    birdIndex={0}
-
-                    log={log}
-                    setLog={setLog}
-
-                    navigation={navigation}
-
-                    full={true}
+                    bird={birds[0]}
+                    place={3}
                 />
 
             </Container>

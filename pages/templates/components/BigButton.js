@@ -13,6 +13,7 @@ import { useState } from 'react';
     - (optional) alt: boolean, changes to alternate colour when true
     - (optional) small: boolean, changes to small icon
     - (optional) compact: boolean, compact a button
+    - (optional) margin: custom margin
 */
 
 export default function BigButton(props) {
@@ -150,8 +151,13 @@ export default function BigButton(props) {
                         alignItems: 'center',
                         justifyContent: 'center',
 
-                        marginLeft: 12,
-                        marginRight: 12,
+                        marginLeft: props.margin == undefined 
+                            ? 12
+                            : props.margin,
+
+                        marginRight: props.margin == undefined 
+                            ? 12
+                            : props.margin,
                     }}
                 >
                     <Text
