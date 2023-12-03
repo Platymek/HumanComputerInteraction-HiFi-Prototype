@@ -1,5 +1,5 @@
-import { Pressable } from 'react-native';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, Pressable } from 'react-native';
+import { useState } from 'react';
 
 /*
     - BigButton Component -
@@ -8,12 +8,48 @@ import { Text, View, Image } from 'react-native';
     - colors: color palette of page
     - title: text in big button
     - onPress: function to be performed when the button is pressed
+    - (optional) lite: boolean, changes to lite button
     - (optional) source: source of image
     - (optional) alt: changes to alternate colour when true
     - (optional) small: changes to small icon
 */
 
 export default function BigButton(props) {
+
+    const [hovering, setHovering] = useState(false);
+
+    const textColor = props.lite
+        ? props.alt
+            ? props.colors[5]
+            : props.colors[3]
+        : props.colors[1];
+
+    const buttonColor = props.lite
+        ? "#00000000"
+        : props.alt
+            ? props.colors[5]
+            : props.colors[3];
+
+    const buttonColorPressed = props.lite
+        ? props.colors[7]
+        : props.alt
+            ? props.colors[6]
+            : props.colors[2];
+
+    
+    function GetShadow(lite) {
+
+        if (!lite){
+
+            return {
+
+                shadowOpacity: 0.25,
+                shadowRadius: 4,
+                elevation: 5,
+            }
+        }
+    }
+
 
     function RenderImage(props) {
 
@@ -58,6 +94,7 @@ export default function BigButton(props) {
         <View style={{
 
             padding: 4,
+            width: '100%',
         }}>
 
             <Pressable
@@ -71,25 +108,25 @@ export default function BigButton(props) {
 
                 style={({ pressed }) => [{
 
-                    backgroundColor: pressed
-
-                        ? (props.alt == true
-                            ? props.colors[6]
-                            : props.colors[2])
-
-                        : (props.alt == true
-                            ? props.colors[5]
-                            : props.colors[3]),
+                    backgroundColor: pressed || hovering
+                        ? (buttonColorPressed)
+                        : (buttonColor),
 
                     padding: 12,
 
                     borderRadius: 12,
                     alignItems: 'center',
+                }, GetShadow(props.lite)]}
 
-                    shadowOpacity: 0.25,
-                    shadowRadius: 4,
-                    elevation: 5,
-                }]}
+                onHoverIn={() => {
+
+                    setHovering(true);
+                }}
+
+                onHoverOut={() => {
+
+                    setHovering(false);
+                }}
             >
                 <View
 
@@ -114,7 +151,7 @@ export default function BigButton(props) {
 
                         style={{
 
-                            color: props.colors[1],
+                            color: textColor,
                             fontSize: 28,
                             textAlign: 'center'
                         }}

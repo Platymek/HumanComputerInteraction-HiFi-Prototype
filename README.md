@@ -41,17 +41,24 @@ Under each component is listed the properties passed through as a parameter in '
 - (optional) source: source of image
 - (optional) alt: changes to alternate colour when true
 - (optional) small: changes to small icon
+- (optional) alt: changes to alternate colour when true
 
 ### HyperLinkText
 - text: text in big button
 - link: hyperlink text
 - (optional) alt: boolean, colour as red instead of green
 
-### HintButton Component
+### HintButton
 text: text which will appear in the modal
 (optional) alt: boolean, colour as red instead of green
 
-
 ### ScrollBox Component
-do this when calling ScrollingBox: 'color="#ededed"' (or the color varable)
-Add children between <></>
+
+
+### Container
+- style: additional style of container
+- grey: boolean, is grey with no shadow
+
+### BirdContainer
+- colors: color palette of page
+- bird: bird class

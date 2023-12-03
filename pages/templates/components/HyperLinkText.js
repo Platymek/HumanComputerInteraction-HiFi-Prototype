@@ -20,6 +20,8 @@ export default function HyperLinkText(props) {
             padding: 4,
             flexDirection: 'row',
             flexWrap: 'wrap',
+            justifyContent: 'center',
+            width: '100%',
         }}>
             <Text
 

@@ -44,7 +44,7 @@ export default function Admin({ navigation, route }) {
                     color: colors[6],
                 }}>
                     <Text style={{ fontWeight: "bold" }}>Enter your details to see the results page early. </Text>
-                    <Text>The page shows the current data displayed by graphs and a downloadable .csv file.</Text>
+                    <Text>The page shows the current leaderboard for birds spotted and allows you to download the data in the .csv file format to use on any spreadsheet program of your choosing (e.g. Excel)</Text>
                 </Text>
 
                 <View style={{

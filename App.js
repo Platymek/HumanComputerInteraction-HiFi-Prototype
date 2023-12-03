@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import colors from './Colors'
+import birds from './Birds'
 
 import BigButton from './pages/templates/components/BigButton';
 import Header from './pages/templates/components/Header'; 
@@ -13,35 +14,32 @@ import Admin from './pages/Admin';
 import Help from './pages/Help';
 import Dashboard from './pages/Dashboard';
 import ScrollingBox from './pages/templates/components/ScrollBox'
+import Container from './pages/templates/components/Container';
 
 function TestHarness({ navigation, route }) {
 
     const { colors } = route.params
 
     return (
-
         
-
         <View
             style={{
 
                 alignItems: 'center',
                 justifyContent: 'center',
-                flex: 1,
-            }}>
+                flex:1,
+            }}
+        >
+            <Container colors={colors}>
+                <BigButton
 
-            <View
-                style={{
+                    colors={colors}
 
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flex: 1,
+                    title={"Hello"}
 
-                }}
-            >
-                <Text
-                    style={{
-
+                    onPress={() => navigation.navigate("TestHarness2")}
+                />
+                <BigButton
                         fontSize: 18,
                     }}
                 >
@@ -63,50 +61,56 @@ function TestHarness({ navigation, route }) {
 
                 <Text>Other content</Text>
                 <ScrollingBox color="#ededed">
-                <BigButton
+                  
+                    <BigButton
 
-                    colors={colors}
+                        colors={colors}
 
-                    title={"Start"}
+                        title={"Hello"}
+                        lite={true}
+                    />
+                    <BigButton
 
-                    onPress={() => {
+                        colors={colors}
 
-                        navigation.navigate("SignUp")
-                    }}
-                />
-                <BigButton
+                        title={"Hello"}
+                        alt={true}
+                        lite={true}
+                    />
+    <<<<<<< origin/ScrollBox
+                    <BigButton
 
-                    colors={colors}
+                        colors={colors}
 
-                    title={"Start"}
+                        title={"Start"}
 
-                    onPress={() => {
+                        onPress={() => {
 
-                        navigation.navigate("SignUp")
-                    }}
-                />
-                <BigButton
+                            navigation.navigate("SignUp")
+                        }}
+                    />
+                    <BigButton
 
-                    colors={colors}
+                        colors={colors}
 
-                    title={"Start"}
+                        title={"Start"}
 
-                    onPress={() => {
+                        onPress={() => {
 
-                        navigation.navigate("SignUp")
-                    }}
-                />
-                <BigButton
+                            navigation.navigate("SignUp")
+                        }}
+                    />
+                    <BigButton
 
-                    colors={colors}
+                        colors={colors}
 
-                    title={"Start"}
+                        title={"Start"}
 
-                    onPress={() => {
+                        onPress={() => {
 
-                        navigation.navigate("SignUp")
-                    }}
-                />
+                            navigation.navigate("SignUp")
+                        }}
+                    />
                 </ScrollingBox>
 
             </View>
@@ -169,8 +173,7 @@ function App() {
 
             <Stack.Navigator
 
-                initialRouteName="TestHarness"
-
+                initialRouteName="SignUp"
                 screenOptions={{
 
                     headerShown: false,
@@ -190,7 +193,7 @@ function App() {
 
                 <Stack.Screen
 
-                    name="Home"
+                    name="TestHarness2"
                     component={TestHarness2}
 
                     initialParams={{
