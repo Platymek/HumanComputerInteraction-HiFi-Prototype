@@ -4,7 +4,7 @@ import BirdContainer from './BirdContainer'
 import BigButton from "./BigButton";
 import Container from "./Container";
 
-export default function(props) {
+export default function IndividualLog(props) {
 
     const [count, setCount] = useState(
 
