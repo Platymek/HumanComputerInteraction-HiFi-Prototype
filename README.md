@@ -11,7 +11,7 @@ The format for data (e.g. the number of birds logged)
 ### log
 This data logs the number of birds spotted for specified species in a dictionary
 index: the same number used for indexing the birds. This is so that the dictionary can also be checked if the bird has already been added
-- population: the number spotted by the user
+value: the number spotted by the user
 
 ### colors
 A simple list with every colour. Any new sets of colours must have an identical layout to that of the original Colors.js
