@@ -25,7 +25,7 @@ export default function BigButton(props) {
         : props.colors[1];
 
     const buttonColor = props.lite
-        ? "#00000000"
+        ? props.colors[1]
         : props.alt
             ? props.colors[5]
             : props.colors[3];
