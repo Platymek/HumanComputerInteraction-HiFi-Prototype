@@ -13,6 +13,8 @@ import Dashboard from './pages/Dashboard';
 import Container from './pages/templates/components/Container';
 import Main from './pages/templates/Main';
 import Info from './pages/Info';
+import FullList from './pages/FullList';
+
 import IndividualSearch from './pages/templates/components/IndividualSearch';
 import SearchBirds from './pages/templates/components/SearchBirds';
 
@@ -103,7 +105,7 @@ function App() {
 
             <Stack.Navigator
 
-                initialRouteName="TestHarness"
+                initialRouteName="FullList"
                 screenOptions={{
 
                     headerShown: false,
@@ -187,6 +189,21 @@ function App() {
 
                     name="Info"
                     component={Info}
+
+                    initialParams={{
+
+                        colors: colors,
+                        birds: birds,
+                        infoIndex: infoIndex,
+                        log: log,
+                        setLog: setLog,
+                    }}
+                />
+
+                <Stack.Screen
+
+                    name="FullList"
+                    component={FullList}
 
                     initialParams={{
 
