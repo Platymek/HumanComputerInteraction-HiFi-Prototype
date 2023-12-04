@@ -9,6 +9,8 @@ import BigButton from './BigButton';
     props:
     - colors: color palette of page
     - navigation: navigation class
+    - (optional) hideBack: hide back button
+    - (optional) hideHome: hide home button
 
 */
 
@@ -18,51 +20,54 @@ export default function Header(props) {
 
         const [hovering, setHovering] = useState(false);
 
-        return (
+        if (!props.visible) {
 
-            <Pressable
+            return (
 
-                style={({ pressed }) => [{
+                <Pressable
 
-                    borderRadius: 16,
+                    style={({ pressed }) => [{
 
-                    backgroundColor: pressed || hovering
-                        ? props.colors[4]
-                        : props.colors[1],
+                        borderRadius: 16,
 
-                    marginLeft: 4,
-                }]}
+                        backgroundColor: pressed || hovering
+                            ? props.colors[4]
+                            : props.colors[1],
 
-                onHoverIn={() => {
+                        marginLeft: 4,
+                    }]}
 
-                    setHovering(true);
-                }}
+                    onHoverIn={() => {
 
-                onHoverOut={() => {
-
-                    setHovering(false);
-                }}
-
-                unstable_pressDelay={1}
-
-                onPress={ props.onPress }
-            >
-
-                <Image
-
-                    source={props.source}
-
-                    style={{
-
-                        width: props.size,
-                        height: props.size,
-                        margin: 9,
-                        tintColor: props.colors[2],
+                        setHovering(true);
                     }}
-                />
 
-            </Pressable>
-        )
+                    onHoverOut={() => {
+
+                        setHovering(false);
+                    }}
+
+                    unstable_pressDelay={1}
+
+                    onPress={props.onPress}
+                >
+
+                    <Image
+
+                        source={props.source}
+
+                        style={{
+
+                            width: props.size,
+                            height: props.size,
+                            margin: 9,
+                            tintColor: props.colors[2],
+                        }}
+                    />
+
+                </Pressable>
+            )
+        }
     }
 
     return (
@@ -114,6 +119,7 @@ export default function Header(props) {
 
                         colors={props.colors}
                         size={40}
+                        visible={props.hideBack == true}
 
                         onPress={() => props.navigation.goBack()}
                     />
@@ -124,6 +130,7 @@ export default function Header(props) {
 
                         colors={props.colors}
                         size={45}
+                        visible={props.hideHome == true}
 
                         onPress={() => {
 

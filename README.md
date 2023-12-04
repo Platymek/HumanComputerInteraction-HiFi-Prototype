@@ -90,3 +90,5 @@ Allows children
 
 ### Header
 - navigate: navigation class
+- (optional) hideBack: hide back button
+- (optional) hideHome: hide home button

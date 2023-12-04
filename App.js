@@ -11,10 +11,8 @@ import Admin from './pages/Admin';
 import Help from './pages/Help';
 import Dashboard from './pages/Dashboard';
 import Container from './pages/templates/components/Container';
-import IndividualLog from './pages/templates/components/IndividualLog';
-import BirdContainer from './pages/templates/components/BirdContainer';
-import IndividualResult from './pages/templates/components/IndividualResult';
 import Main from './pages/templates/Main';
+import BigButton from './pages/templates/components/BigButton';
 
 function TestHarness({ 
 
@@ -23,6 +21,10 @@ function TestHarness({
 }) {
 
     const { colors, birds, log, setLog } = route.params
+
+    // `navigation` const is passed to the screen component or from useNavigation()
+    const routes = navigation.getState()?.routes;
+    const prevRoute = routes[routes.length - 2]; // -2 because -1 is the current route
 
     return (
         
@@ -33,7 +35,19 @@ function TestHarness({
         >
             <Container colors={colors}>
 
-                <Text>Hello World!</Text>
+                <Text>{route.name}</Text>
+                <Text>{prevRoute == undefined}</Text>
+
+                <BigButton
+
+                    colors={colors}
+                    title={"Visit Second Page"}
+
+                    onPress={() => {
+
+                        navigation.navigate("TestHarness2")
+                    }}
+                />
 
             </Container>
             
@@ -45,17 +59,24 @@ function TestHarness2({ navigation, route }) {
 
     const { colors } = route.params
 
+    // `navigation` const is passed to the screen component or from useNavigation()
+    const routes = navigation.getState()?.routes;
+    const prevRoute = routes[routes.length - 2]; // -2 because -1 is the current route
+
     return (
 
-        <View
-            style={{
+        <Main
 
-                flex: 1,
-                alignItems: 'center',
-                justifyContent: 'center'
-            }}
+            colors={colors}
+            navigation={navigation}
         >
-        </View>
+            <Container colors={colors}>
+
+                <Text>{prevRoute.name}</Text>
+
+            </Container>
+
+        </Main>
     );
 }
 
