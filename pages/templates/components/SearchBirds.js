@@ -95,7 +95,7 @@ export default function SearchBirds(props) {
                         colors={props.colors}
                         title={"Search for Birds"}
                         placeholder={"Enter search here..."}
-                        hintText={"Enter text here to filter out birds by their name"}
+                        hintText={"Enter text here to filter out birds by their name. Birds are sorted by number spotted currently"}
                     />
                 </View>
             </View>
