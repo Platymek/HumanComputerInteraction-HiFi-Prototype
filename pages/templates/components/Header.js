@@ -8,7 +8,7 @@ import BigButton from './BigButton';
 
     props:
     - colors: color palette of page
-    - navigate: navigation class
+    - navigation: navigation class
 
 */
 

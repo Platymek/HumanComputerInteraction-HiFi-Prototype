@@ -14,6 +14,7 @@ import Container from './pages/templates/components/Container';
 import IndividualLog from './pages/templates/components/IndividualLog';
 import BirdContainer from './pages/templates/components/BirdContainer';
 import IndividualResult from './pages/templates/components/IndividualResult';
+import Main from './pages/templates/Main';
 
 function TestHarness({ 
 
@@ -25,40 +26,18 @@ function TestHarness({
 
     return (
         
-        <View
-            style={{
+        <Main
 
-                alignItems: 'center',
-                justifyContent: 'center',
-                flex: 1,
-            }}
+            colors={colors}
+            navigation={navigation}
         >
-            <Container
-            
-                colors={colors}
+            <Container colors={colors}>
 
-                style={{
-
-                    maxWidth:350,
-                }}
-            >
-
-                <IndividualResult
-                
-                    colors={colors}
-                    bird={birds[0]}
-                    place={1}
-                />
-
-                <IndividualResult
-                    
-                    colors={colors}
-                    bird={birds[0]}
-                    place={3}
-                />
+                <Text>Hello World!</Text>
 
             </Container>
-        </View>
+            
+        </Main>
     );
 }
 

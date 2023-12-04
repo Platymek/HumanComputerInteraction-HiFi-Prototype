@@ -26,6 +26,7 @@ Under each pages is listed the properties passed through as a parameter in 'prop
 ## Templates
 Under each tempplate is listed the properties passed through as a parameter in 'props'. Every component must have the following values in the props dictionary, on top of those also listed:
 - colors: the site's colour scheme in list format
+- children: allows children
   
 ### Account
 - buttonName: title of button
@@ -34,6 +35,11 @@ Under each tempplate is listed the properties passed through as a parameter in '
 - hyperText: text of hyperlink
 - hyperLink: text of link in hyperlink
 - hyperPage: page the hyperlink takes the user to
+
+### Main
+- colors: color palette of page
+- navigate: navigation class
+- children: takes in children
 
 
 ## Components
@@ -81,3 +87,6 @@ Allows children
 - birdIndex: index of bird list
 - navigation: navigate class for navigating back home
 - (optional) full: boolean, displays 'Add to log +', not 'Add +'
+
+### Header
+- navigate: navigation class
