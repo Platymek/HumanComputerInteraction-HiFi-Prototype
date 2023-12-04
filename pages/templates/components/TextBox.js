@@ -94,8 +94,6 @@ export default function TextBox(props) {
                         : props.colors[3]),
                 }}
             />
-
-            <StatusBar style="auto" />
         </View>
     );
 }
