@@ -13,6 +13,7 @@ import Dashboard from './pages/Dashboard';
 import Container from './pages/templates/components/Container';
 import Main from './pages/templates/Main';
 import BigButton from './pages/templates/components/BigButton';
+import Info from './pages/Info';
 
 function TestHarness({ 
 
@@ -20,7 +21,7 @@ function TestHarness({
     route,
 }) {
 
-    const { colors, birds, log, setLog } = route.params
+    const { colors, setInfoIndex } = route.params
 
     // `navigation` const is passed to the screen component or from useNavigation()
     const routes = navigation.getState()?.routes;
@@ -41,11 +42,33 @@ function TestHarness({
                 <BigButton
 
                     colors={colors}
-                    title={"Visit Second Page"}
+                    title={"Visit info of bird 0"}
 
                     onPress={() => {
 
-                        navigation.navigate("TestHarness2")
+                        navigation.navigate("Info", { infoIndex: 0 });
+                    }}
+                />
+
+                <BigButton
+
+                    colors={colors}
+                    title={"Visit info of bird 1"}
+
+                    onPress={() => {
+
+                        navigation.navigate("Info", { infoIndex: 1 });
+                    }}
+                />
+
+                <BigButton
+
+                    colors={colors}
+                    title={"Visit info of bird 2"}
+
+                    onPress={() => {
+
+                        navigation.navigate("Info", { infoIndex: 2 });
                     }}
                 />
 
@@ -93,6 +116,9 @@ function App() {
     // current list of colours (defaults to lightColors from Colors.js)
     const [colors, setColors] = useState(lightColors);
 
+    // index of bird on info page
+    const [infoIndex, setInfoIndex] = useState(0);
+
     return (
 
         <NavigationContainer>
@@ -117,6 +143,7 @@ function App() {
                         birds: birds,
                         log: log,
                         setLog: setLog,
+                        setInfoIndex: setInfoIndex,
                     }}
                 />
 
@@ -175,6 +202,21 @@ function App() {
                     initialParams={{
 
                         colors: colors
+                    }}
+                />
+
+                <Stack.Screen
+
+                    name="Info"
+                    component={Info}
+
+                    initialParams={{
+
+                        colors: colors,
+                        birds: birds,
+                        infoIndex: infoIndex,
+                        log: log,
+                        setLog: setLog,
                     }}
                 />
 

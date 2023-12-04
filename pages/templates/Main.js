@@ -30,7 +30,8 @@ export default function Main(props) {
 
 		<View style={{
 
-			flex: 1
+			flex: 1,
+			backgroundColor: props.colors[7],
 		}}>
 
 			<Header
@@ -38,8 +39,8 @@ export default function Main(props) {
 				colors={props.colors}
 				navigation={props.navigation}
 
-				hideBack={showNavButtons}
-				hideHome={showNavButtons}
+				hideBack={!showNavButtons}
+				hideHome={!showNavButtons}
 			/>
 
 			<ScrollView style={{
@@ -49,7 +50,7 @@ export default function Main(props) {
 			}}>
 				<View style={{
 
-					padding:16,
+					padding: 16,
 				}}>
 					{props.children}
 

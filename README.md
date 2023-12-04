@@ -37,7 +37,6 @@ Under each tempplate is listed the properties passed through as a parameter in '
 - hyperPage: page the hyperlink takes the user to
 
 ### Main
-- colors: color palette of page
 - navigate: navigation class
 - children: takes in children
 
