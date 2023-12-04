@@ -30,41 +30,51 @@ function TestHarness({
             colors={colors}
             navigation={navigation}
         >
-            <Container colors={colors}>
+            <Container
 
-                <IndividualSearch
+                colors={colors}
+            >
 
-                    colors={colors}
-
-                    birds={birds}
-                    navigation={navigation}
-                    log={log}
-                    setLog={setLog}
-                    birdIndex={0}
-                />
-
-                <IndividualSearch
+                <Container
 
                     colors={colors}
+                    grey={true}
+                >
 
-                    birds={birds}
-                    navigation={navigation}
-                    log={log}
-                    setLog={setLog}
-                    birdIndex={1}
-                />
+                    <IndividualSearch
 
-                <IndividualSearch
+                        colors={colors}
 
-                    colors={colors}
+                        birds={birds}
+                        navigation={navigation}
+                        log={log}
+                        setLog={setLog}
+                        birdIndex={0}
+                    />
 
-                    birds={birds}
-                    navigation={navigation}
-                    log={log}
-                    setLog={setLog}
-                    birdIndex={2}
-                />
+                    <IndividualSearch
 
+                        colors={colors}
+
+                        birds={birds}
+                        navigation={navigation}
+                        log={log}
+                        setLog={setLog}
+                        birdIndex={1}
+                    />
+
+                    <IndividualSearch
+
+                        colors={colors}
+
+                        birds={birds}
+                        navigation={navigation}
+                        log={log}
+                        setLog={setLog}
+                        birdIndex={2}
+                    />
+
+                </Container>
             </Container>
             
         </Main>

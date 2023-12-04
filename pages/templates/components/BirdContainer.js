@@ -63,7 +63,7 @@ export default function BirdContainer(props) {
 
                     flexDirection: 'row',
                     flexWrap: 'wrap',
-                    justifyContent: 'flex-start',
+                    justifyContent: 'space-between',
                     alignItems: 'center',
                     width: '100%',
                     marginBottom: -8,

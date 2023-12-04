@@ -1,6 +1,8 @@
 import { Text, View, TextInput } from 'react-native';
 import BirdContainer from './BirdContainer'
 import AddButton from './AddButton';
+import SeeInfo from './SeeInfo';
+import colors from '../../../Colors';
 
 /*
 
@@ -26,24 +28,25 @@ export default function IndividualSearch(props) {
             colors={props.colors}
             bird={props.birds[props.birdIndex]}
         >
-            <Text style={{
+            <SeeInfo
 
-                fontSize: 18,
-                marginTop: 18,
-                color: props.colors[2]
-            }}>
-                <AddButton
+                colors={props.colors}
+                birdIndex={props.birdIndex}
+                navigation={props.navigation}
+                smallText={true}
+                compact={true}
+            />
+            <AddButton
 
-                    colors={props.colors}
-                    birds={props.birds}
-                    log={props.log}
-                    setLog={props.setLog}
-                    birdIndex={props.birdIndex}
-                    navigation={props.navigation}
-                />
-
-            </Text>
-
+                colors={props.colors}
+                birds={props.birds}
+                log={props.log}
+                setLog={props.setLog}
+                birdIndex={props.birdIndex}
+                navigation={props.navigation}
+                smallText={true}
+                compact={true}
+            />
         </BirdContainer>
     )
 }

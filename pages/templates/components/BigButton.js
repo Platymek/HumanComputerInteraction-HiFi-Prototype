@@ -14,6 +14,7 @@ import { useState } from 'react';
     - (optional) small: boolean, changes to small icon
     - (optional) compact: boolean, compact a button
     - (optional) margin: custom margin
+    - (optional) smallText: boolean, small text
 */
 
 export default function BigButton(props) {
@@ -103,7 +104,7 @@ export default function BigButton(props) {
 
         <View style={[
 
-            { padding: 4, },
+            { margin: 4, },
             compactStyle(props.compact)
         ]}>
 
@@ -167,7 +168,10 @@ export default function BigButton(props) {
                         style={{
 
                             color: textColor,
-                            fontSize: 28,
+                            fontSize: props.smallText
+                                ? 20
+                                : 28,
+
                             textAlign: 'center'
                         }}
                     >
