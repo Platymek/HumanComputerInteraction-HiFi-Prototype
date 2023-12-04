@@ -23,10 +23,6 @@ function TestHarness({
 
     const { colors, setInfoIndex } = route.params
 
-    // `navigation` const is passed to the screen component or from useNavigation()
-    const routes = navigation.getState()?.routes;
-    const prevRoute = routes[routes.length - 2]; // -2 because -1 is the current route
-
     return (
         
         <Main
@@ -35,9 +31,6 @@ function TestHarness({
             navigation={navigation}
         >
             <Container colors={colors}>
-
-                <Text>{route.name}</Text>
-                <Text>{prevRoute == undefined}</Text>
 
                 <BigButton
 
