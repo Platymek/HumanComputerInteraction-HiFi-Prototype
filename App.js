@@ -12,8 +12,8 @@ import Help from './pages/Help';
 import Dashboard from './pages/Dashboard';
 import Container from './pages/templates/components/Container';
 import Main from './pages/templates/Main';
-import BigButton from './pages/templates/components/BigButton';
 import Info from './pages/Info';
+import IndividualSearch from './pages/templates/components/IndividualSearch';
 
 function TestHarness({ 
 
@@ -21,7 +21,7 @@ function TestHarness({
     route,
 }) {
 
-    const { colors, setInfoIndex } = route.params
+    const { colors, birds, log, setLog } = route.params
 
     return (
         
@@ -32,37 +32,37 @@ function TestHarness({
         >
             <Container colors={colors}>
 
-                <BigButton
+                <IndividualSearch
 
                     colors={colors}
-                    title={"Visit info of bird 0"}
 
-                    onPress={() => {
-
-                        navigation.navigate("Info", { infoIndex: 0 });
-                    }}
+                    birds={birds}
+                    navigation={navigation}
+                    log={log}
+                    setLog={setLog}
+                    birdIndex={0}
                 />
 
-                <BigButton
+                <IndividualSearch
 
                     colors={colors}
-                    title={"Visit info of bird 1"}
 
-                    onPress={() => {
-
-                        navigation.navigate("Info", { infoIndex: 1 });
-                    }}
+                    birds={birds}
+                    navigation={navigation}
+                    log={log}
+                    setLog={setLog}
+                    birdIndex={1}
                 />
 
-                <BigButton
+                <IndividualSearch
 
                     colors={colors}
-                    title={"Visit info of bird 2"}
 
-                    onPress={() => {
-
-                        navigation.navigate("Info", { infoIndex: 2 });
-                    }}
+                    birds={birds}
+                    navigation={navigation}
+                    log={log}
+                    setLog={setLog}
+                    birdIndex={2}
                 />
 
             </Container>
