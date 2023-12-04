@@ -14,6 +14,8 @@ import Container from "./Container";
     - birdIndex: index of bird list
     - navigation: navigate class for navigating back home
     - (optional) full: boolean, displays 'Add to log +', not 'Add +'
+    - (optional) smallText: boolean, small text
+    - (optional) compact: boolean, compact button
 */
 
 export default function AddButton(props) {
@@ -34,7 +36,7 @@ export default function AddButton(props) {
 
     return (
         
-        <View style={{ width: '100%' }}>
+        <View>
 
             {/* Modal for adding bird */}
             <Modal
@@ -219,6 +221,8 @@ export default function AddButton(props) {
             
                 colors={props.colors}
                 title={getTitle(props.full)}
+                smallText={props.smallText == true}
+                compact={true}
 
                 onPress={() => {
                     
