@@ -81,3 +81,6 @@ Allows children
 - birdIndex: index of bird list
 - navigation: navigate class for navigating back home
 - (optional) full: boolean, displays 'Add to log +', not 'Add +'
+
+### Header
+- navigate: navigation class

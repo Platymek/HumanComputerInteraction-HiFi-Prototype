@@ -1,12 +1,11 @@
-import { Pressable } from 'react-native';
-import { Text, View, Button, StyleSheet, Image } from 'react-native';
+import { View, Image } from 'react-native';
 
 import BigButton from './components/BigButton';
 import HyperLinkText from './components/HyperLinkText';
 import Container from './components/Container';
 
 /*
-    - BigButton Component -
+    - Account Template -
 
     props:
     - colors: color palette of page
