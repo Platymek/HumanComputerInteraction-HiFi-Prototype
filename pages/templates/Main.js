@@ -46,7 +46,7 @@ export default function Main(props) {
 			<ScrollView style={{
 
 				maxWidth: 500,
-				width: '100%',
+				width:'100%'
 			}}>
 				<View style={{
 

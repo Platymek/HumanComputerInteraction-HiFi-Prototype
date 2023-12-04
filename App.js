@@ -14,6 +14,7 @@ import Container from './pages/templates/components/Container';
 import Main from './pages/templates/Main';
 import Info from './pages/Info';
 import IndividualSearch from './pages/templates/components/IndividualSearch';
+import SearchBirds from './pages/templates/components/SearchBirds';
 
 function TestHarness({ 
 
@@ -34,47 +35,21 @@ function TestHarness({
 
                 colors={colors}
             >
-
-                <Container
+                <SearchBirds
 
                     colors={colors}
-                    grey={true}
-                >
+                    birds={birds}
+                    results={false}
+                    navigation={navigation}
+                    log={log}
+                    setLog={setLog}
+                />
+                <SearchBirds
 
-                    <IndividualSearch
-
-                        colors={colors}
-
-                        birds={birds}
-                        navigation={navigation}
-                        log={log}
-                        setLog={setLog}
-                        birdIndex={0}
-                    />
-
-                    <IndividualSearch
-
-                        colors={colors}
-
-                        birds={birds}
-                        navigation={navigation}
-                        log={log}
-                        setLog={setLog}
-                        birdIndex={1}
-                    />
-
-                    <IndividualSearch
-
-                        colors={colors}
-
-                        birds={birds}
-                        navigation={navigation}
-                        log={log}
-                        setLog={setLog}
-                        birdIndex={2}
-                    />
-
-                </Container>
+                    colors={colors}
+                    birds={birds}
+                    results={true}
+                />
             </Container>
             
         </Main>

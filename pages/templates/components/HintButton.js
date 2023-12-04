@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Text, View, Modal, Pressable, StyleSheet } from 'react-native';
 import BigButton from './BigButton'
+import { StatusBar } from 'react-native';
 
 /*
     - HintButton Component -
@@ -43,6 +44,7 @@ export default function HintButton(props) {
                         flex: 1,
                         justifyContent: 'center',
                         alignItems: 'center',
+                        backgroundColor: props.colors[7] + '88',
                     }}
                 >
                     <View
@@ -66,6 +68,8 @@ export default function HintButton(props) {
                             shadowOpacity: 0.25,
                             shadowRadius: 8,
                             elevation: 8,
+                            padding: 16,
+                            paddingBottom: 32,
                         }}
                     >
                         <View style={[{

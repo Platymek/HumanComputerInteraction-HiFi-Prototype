@@ -4,6 +4,16 @@ import BirdContainer from './BirdContainer'
 import BigButton from "./BigButton";
 import Container from "./Container";
 
+/*
+
+    - IndividualResult component -
+
+    props:
+    - colors: color palette of page
+    - bird: bird
+    - place: place in list
+*/
+
 export default function IndividualResult(props) {
 
     return (

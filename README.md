@@ -91,3 +91,14 @@ Allows children
 - navigate: navigation class
 - (optional) hideBack: hide back button
 - (optional) hideHome: hide home button
+
+### IndividualResult component
+- bird: bird
+
+### IndividualSearch
+- navigation: navigation class
+- birds: birds list
+- log: log list
+- setLog: set log list function
+- birdIndex: index of bird list
+- navigation: navigate class for navigating back home
