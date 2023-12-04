@@ -4,6 +4,7 @@ import IndividualResult from "./IndividualResult";
 import Container from "./Container";
 import { Image } from "react-native";
 import IndividualSearch from "./IndividualSearch";
+import ScrollingBox from "./ScrollBox";
 
 /*
 

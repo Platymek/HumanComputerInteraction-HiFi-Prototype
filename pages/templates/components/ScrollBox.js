@@ -14,15 +14,16 @@ export default function ScrollingBox(props) {
       style={{
 
         flex: 1,
-        borderRadius:20,
+        borderRadius:30,
       }}
     >
       <ScrollView
 
         style={{
 
-          width:'100%',
-          height:'100%',
+          width: '100%',
+          height: '100%',
+          maxHeight:props.height,
 
           marginTop:-16,
           marginBottom:-16,
@@ -30,7 +31,8 @@ export default function ScrollingBox(props) {
       >
         {props.children}
 
-      </ScrollView>
+          </ScrollView>
+
     </Container>
   );
 }
