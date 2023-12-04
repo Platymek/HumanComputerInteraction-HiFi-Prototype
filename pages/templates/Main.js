@@ -10,6 +10,7 @@ import { ScrollView } from "react-native";
     - colors: color palette of page
     - navigate: navigation class
 	- children: takes in children
+	- admin: admin results page
 
 */
 

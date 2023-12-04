@@ -11,6 +11,7 @@ import BigButton from './BigButton';
     - navigation: navigation class
     - (optional) hideBack: hide back button
     - (optional) hideHome: hide home button
+	- (optional) admin: admin results page
 
 */
 

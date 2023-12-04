@@ -14,6 +14,7 @@ import Container from './pages/templates/components/Container';
 import Main from './pages/templates/Main';
 import Info from './pages/Info';
 import FullList from './pages/FullList';
+import Results from './pages/Results';
 
 import IndividualSearch from './pages/templates/components/IndividualSearch';
 import SearchBirds from './pages/templates/components/SearchBirds';
@@ -105,7 +106,7 @@ function App() {
 
             <Stack.Navigator
 
-                initialRouteName="FullList"
+                initialRouteName="Results"
                 screenOptions={{
 
                     headerShown: false,
@@ -204,6 +205,21 @@ function App() {
 
                     name="FullList"
                     component={FullList}
+
+                    initialParams={{
+
+                        colors: colors,
+                        birds: birds,
+                        infoIndex: infoIndex,
+                        log: log,
+                        setLog: setLog,
+                    }}
+                />
+
+                <Stack.Screen
+
+                    name="Results"
+                    component={Results}
 
                     initialParams={{
 
