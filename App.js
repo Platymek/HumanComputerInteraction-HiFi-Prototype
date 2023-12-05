@@ -18,6 +18,7 @@ import Results from './pages/Results';
 
 import IndividualSearch from './pages/templates/components/IndividualSearch';
 import SearchBirds from './pages/templates/components/SearchBirds';
+import Home from './pages/Home';
 
 function TestHarness({ 
 
@@ -91,7 +92,7 @@ function App() {
     // check README for how birds are logged
     const [log, setLog] = useState({
 
-        [0]: 4,
+
     });
 
     // current list of colours (defaults to lightColors from Colors.js)
@@ -100,13 +101,17 @@ function App() {
     // index of bird on info page
     const [infoIndex, setInfoIndex] = useState(0);
 
+    // index of bird on info page
+    const [unsureList, setUnsureList] = useState([0]);
+
     return (
 
         <NavigationContainer>
 
             <Stack.Navigator
 
-                initialRouteName="Results"
+                initialRouteName="Home"
+
                 screenOptions={{
 
                     headerShown: false,
@@ -228,6 +233,22 @@ function App() {
                         infoIndex: infoIndex,
                         log: log,
                         setLog: setLog,
+                    }}
+                />
+
+                <Stack.Screen
+
+                    name="Home"
+                    component={Home}
+
+                    initialParams={{
+
+                        colors: colors,
+                        birds: birds,
+                        infoIndex: infoIndex,
+                        log: {},
+                        unsureList: unsureList,
+                        setUnsureList: setUnsureList,
                     }}
                 />
 

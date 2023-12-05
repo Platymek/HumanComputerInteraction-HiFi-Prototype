@@ -22,9 +22,9 @@ export default function Main(props) {
 	var prevRoute = routes[routes.length - 2]; // -2 because -1 is the current route
 	var showNavButtons = prevRoute == undefined
 		? false
-		: prevRoute.name == "Home"
-			? false
-			: true;
+		: true; //prevRoute.name == "Home"
+			//? false
+			//: true;
 
 
 	return (
@@ -32,7 +32,6 @@ export default function Main(props) {
 		<View style={{
 
 			backgroundColor: props.colors[7],
-			height: '100%',
 			flex: 1,
 		}}>
 
@@ -47,20 +46,31 @@ export default function Main(props) {
 				admin={props.admin}
 			/>
 
-			<View style={{
+			<ScrollView
 
-				maxWidth: 500,
-				width: '100%',
-				flex: 1,
-			}}>
+				style={{
+
+					width: '100%',
+				}}
+
+				contentContainerStyle={{
+
+					justifyContent: 'center',
+					alignItems: 'center',
+				}}
+			>
 				<View style={{
 
+					maxWidth: 500,
 					padding: 16,
+					width: '100%',
+					justifyContent: 'center',
+					alignItems: 'center',
 				}}>
 					{props.children}
 
 				</View>
-			</View>
+			</ScrollView>
 
 		</View>
 	)

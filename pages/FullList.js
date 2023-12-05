@@ -8,7 +8,7 @@ export default function FullList({
     route,
 }) {
 
-    const { colors, birds, log, setLog } = route.params
+    const { colors, birds, log } = route.params
 
     return (
 
@@ -28,7 +28,6 @@ export default function FullList({
                     results={false}
                     navigation={navigation}
                     log={log}
-                    setLog={setLog}
                     maxHeight={500}
                 />
             </Container>

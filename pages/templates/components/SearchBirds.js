@@ -52,7 +52,6 @@ export default function SearchBirds(props) {
                         birds={birds}
                         navigation={props.navigation}
                         log={props.log}
-                        setLog={props.setLog}
                         birdIndex={i}
                         key={'bird' + i}
                     />
