@@ -195,7 +195,7 @@ export default function AddButton(props) {
 
                                 console.log(props.log)
 
-                                props.navigation.navigate('Home');
+                                props.navigation.navigate('Home', { log: newLog, });
                             }}
                         />
 

@@ -92,7 +92,7 @@ function App() {
     // check README for how birds are logged
     const [log, setLog] = useState({
 
-        [0]: 4,
+
     });
 
     // current list of colours (defaults to lightColors from Colors.js)
@@ -100,6 +100,9 @@ function App() {
 
     // index of bird on info page
     const [infoIndex, setInfoIndex] = useState(0);
+
+    // index of bird on info page
+    const [unsureList, setUnsureList] = useState([0]);
 
     return (
 
@@ -245,6 +248,8 @@ function App() {
                         infoIndex: infoIndex,
                         log: log,
                         setLog: setLog,
+                        unsureList: unsureList,
+                        setUnsureList: setUnsureList,
                     }}
                 />
 

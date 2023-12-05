@@ -8,7 +8,7 @@ export default function IndividualLog(props) {
 
     const [count, setCount] = useState(
 
-        toString(props.log[props.birdIndex])
+        '' + (props.log[props.birdIndex])
     );
 
     return (
@@ -18,121 +18,143 @@ export default function IndividualLog(props) {
             colors={props.colors}
             bird={props.birds[props.birdIndex]}
         >
-            <Text style={{ 
-                
-                color: props.colors[2], 
-                fontSize: 18 }}
-            >
-                Seen:
 
-            </Text>
+            <View style={{
 
-            <BigButton 
+                flexDirection: 'row',
+                flexWrap: 'wrap',
+                alignItems: 'center',
+            }}>
+            </View>
 
-                colors={props.colors}
-                title={"-"}
-                lite={true}
-                compact={true}
-                margin={0}
+            <View style={{
 
-                onPress={() => {
+                flexDirection: 'row',
+                flexWrap: 'wrap',
+                alignItems: 'center',
+                margin: -8,
+            }}>
 
-                    var newInt = parseInt(count);
-                    newInt--;
+                <BigButton
 
-                    if (newInt < 1){
+                    colors={props.colors}
+                    title={"-"}
+                    lite={true}
+                    compact={true}
+                    margin={0}
 
-                        newInt = 1;
-                    }
+                    onPress={() => {
 
-                    if (count == ""){
-                                
-                        setCount("1");
-                    }
-                    else
-                    {
-                        setCount('' + newInt);
-                    }
+                        var newInt = parseInt(count);
+                        newInt--;
 
-                    var newLog = props.log;
-                    newLog[props.birdIndex] 
-                        = parseInt(count)
+                        if (newInt < 1) {
 
-                    props.setLog(newLog)
-                }}
-            />
-
-            <Container
-
-                colors={props.colors}
-                grey={true}
-                style={{
-
-                    padding: 0,
-                    maxWidth: 50,
-                    justifyContent: 'center',
-                    borderRadius: 20,
-                }}
-            >
-                <TextInput
-
-                    style={{
-                        
-                        width: '100%',
-                        color: props.colors[3],
-                        fontSize: 24,
-                        textAlign: 'center',
-                    }}
-
-                    value={count}
-                    inputMode={'numeric'}
-
-                    onChangeText={(text) => {
-                        
-                        if (!isNaN(text)) { 
-                            
-                            setCount(text); 
-
-                            var newLog = props.log;
-                            newLog[props.birdIndex] 
-                                = parseInt(count)
-
-                            props.setLog(newLog)
+                            props.RemoveBird(props.birdIndex)
                         }
+
+                        if (count == "") {
+
+                            setCount("1");
+                        }
+                        else {
+
+                            setCount('' + newInt);
+                        }
+
+                        var newLog = props.log;
+
+                        newLog[props.birdIndex]
+                            = parseInt(count) - 1
+
+                        props.setLog(newLog)
                     }}
                 />
-            </Container>
 
-            <BigButton 
+                <Container
 
-                colors={props.colors}
-                title={"+"}
-                lite={true}
-                compact={true}
-                margin={0}
+                    colors={props.colors}
+                    grey={true}
+                    style={{
 
-                onPress={() => {
+                        padding: 0,
+                        maxWidth: 50,
+                        justifyContent: 'center',
+                        borderRadius: 20,
+                    }}
+                >
+                    <TextInput
 
-                    var newInt = parseInt(count);
-                    newInt++;
+                        style={{
 
-                    if (count == ""){
-                                
-                        setCount("1");
-                    }
-                    else
-                    {
-                        setCount('' + newInt);
-                    }
+                            width: '100%',
+                            color: props.colors[3],
+                            fontSize: 24,
+                            textAlign: 'center',
+                        }}
 
-                    var newLog = props.log;
-                    newLog[props.birdIndex] 
-                        = parseInt(count)
+                        value={count}
+                        inputMode={'numeric'}
 
-                    props.setLog(newLog)
-                }}
-            />
+                        onChangeText={(text) => {
+
+                            if (!isNaN(text)) {
+
+                                setCount(text);
+
+                                var newLog = props.log;
+                                newLog[props.birdIndex]
+                                    = parseInt(count)
+
+                                props.setLog(newLog)
+                            }
+                        }}
+                    />
+                </Container>
+
+                <BigButton
+
+                    colors={props.colors}
+                    title={"+"}
+                    lite={true}
+                    compact={true}
+                    margin={0}
+
+                    onPress={() => {
+
+                        var newInt = parseInt(count);
+                        newInt++;
+
+                        if (count == "") {
+
+                            setCount("1");
+                        }
+                        else {
+                            setCount('' + newInt);
+                        }
+
+                        var newLog = props.log;
+                        newLog[props.birdIndex]
+                            = parseInt(count)
+
+                        props.setLog(newLog)
+                    }}
+                />
+            </View>
 
         </BirdContainer>
     )
 }
+
+/*
+
+    <Text style={{
+
+        color: props.colors[2],
+        fontSize: 18
+    }}
+    >
+        Seen:
+
+    </Text>
+*/
