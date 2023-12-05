@@ -1,33 +1,35 @@
 import React from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView, StatusBar } from 'react-native';
+import Container from './templates/components/Container';
+import BigButton from './templates/components/BigButton';
 
-export default function HelpPage({ route }) {
+export default function HelpPage({ navigation, route }) {
   const { colors } = route.params;
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 16, backgroundColor: colors[7], }}>
-      <ScrollView
-      style={{ flex: 1, maxHeight: 614 }}
-      contentContainerStyle={{ flexGrow: 1, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 16, }}
-      >
-        <View
-          style={{
-            flex: 1,
-            width: '100%',
-            maxWidth: 340,
-            borderRadius: 20,
-            padding: 16,
-            backgroundColor: colors[1],
-            shadowOffset: {
-              width: 0,
-              height: 2,
-            },
-            shadowOpacity: 0.25,
-            shadowRadius: 8,
-            elevation: 8,
-            overflow: 'hidden',
-          }}
-        >
+    <ScrollView
+      style={{ 
+        
+        flex: 1,
+        maxWidth: 500,
+        alignSelf:'center',
+      }}
+    >
+      <StatusBar
+
+          backgroundColor={colors[1]}
+          hidden={false}
+          barStyle='dark-content'
+      />
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 16, backgroundColor: colors[7], }}>
+        <Container colors={colors} >
+          <BigButton 
+          
+            colors={colors}
+            title={'Go Back'}
+            lite={true}
+            onPress={() => navigation.goBack()}
+          />
           {/* Short Description Section */}
           <View style={{ marginBottom: 16 }}>
             <Text style={{ fontSize: 18, color: colors[2] }}>
@@ -107,8 +109,8 @@ export default function HelpPage({ route }) {
 
             {/*more FAQs*/}
           </View>
-        </View>
-      </ScrollView>
-    </View>
+        </Container>
+      </View>
+    </ScrollView>
   );
 }

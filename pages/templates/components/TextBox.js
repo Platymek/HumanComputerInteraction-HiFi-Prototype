@@ -40,6 +40,7 @@ export default function TextBox(props) {
         <View style={{
 
             padding: 12,
+            width: '100%',
         }}>
             <View style={{
 
@@ -93,8 +94,6 @@ export default function TextBox(props) {
                         : props.colors[3]),
                 }}
             />
-
-            <StatusBar style="auto" />
         </View>
     );
 }
