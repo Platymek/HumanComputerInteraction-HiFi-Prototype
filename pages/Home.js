@@ -147,15 +147,31 @@ export default function Home({ navigation, route }) {
 
                 </Text>
 
-                <ScrollingBox
+                <Container
 
                     colors={colors}
                     grey={true}
                     maxHeight={325}
+
+                    style={{
+
+                        padding: 16,
+                        borderRadius: 30,
+                        paddingBottom: 16,
+                    }}
                 >
                     {birdList}
 
-                </ScrollingBox>
+                </Container>
+
+            </Container>
+
+        </Main>
+    )
+}
+
+/*
+
 
                 <Text style={{
 
@@ -168,9 +184,4 @@ export default function Home({ navigation, route }) {
                     Scroll Down for More
 
                 </Text>
-
-            </Container>
-
-        </Main>
-    )
-}
+*/

@@ -104,15 +104,29 @@ export default function SearchBirds(props) {
                 </View>
             </View>
 
-            <ScrollingBox
+            <Container
 
                 colors={props.colors}
                 grey={true}
                 maxHeight={props.maxHeight}
+
+                style={{
+
+                    padding: 16,
+                    borderRadius: 30,
+                    paddingBottom: 16,
+                }}
             >
                 {Birds(props.results, props.birds, props.colors)}
 
-            </ScrollingBox>
+            </Container>
+        </View>
+    )
+}
+
+/*
+
+
 
             <Text style={{
 
@@ -126,6 +140,5 @@ export default function SearchBirds(props) {
                 Scroll Down for More
                 
             </Text>
-        </View>
-    )
-}
+
+*/

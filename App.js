@@ -90,10 +90,7 @@ const Stack = createNativeStackNavigator();
 function App() {
 
     // check README for how birds are logged
-    const [log, setLog] = useState({
-
-
-    });
+    const [log, setLog] = useState({});
 
     // current list of colours (defaults to lightColors from Colors.js)
     const [colors, setColors] = useState(lightColors);
