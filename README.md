@@ -87,6 +87,12 @@ Allows children
 - navigation: navigate class for navigating back home
 - (optional) full: boolean, displays 'Add to log +', not 'Add +'
 
+### SeeInfo
+- navigation: navigate class for navigating back home
+- birdIndex: index of bird list
+- (optional) smallText: boolean, small text
+- (optional) compact: boolean, compact button
+
 ### Header
 - navigate: navigation class
 - (optional) hideBack: hide back button
