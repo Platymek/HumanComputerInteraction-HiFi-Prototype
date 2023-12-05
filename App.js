@@ -18,6 +18,7 @@ import Results from './pages/Results';
 
 import IndividualSearch from './pages/templates/components/IndividualSearch';
 import SearchBirds from './pages/templates/components/SearchBirds';
+import Home from './pages/Home';
 
 function TestHarness({ 
 
@@ -106,7 +107,8 @@ function App() {
 
             <Stack.Navigator
 
-                initialRouteName="Results"
+                initialRouteName="Home"
+
                 screenOptions={{
 
                     headerShown: false,
@@ -220,6 +222,21 @@ function App() {
 
                     name="Results"
                     component={Results}
+
+                    initialParams={{
+
+                        colors: colors,
+                        birds: birds,
+                        infoIndex: infoIndex,
+                        log: log,
+                        setLog: setLog,
+                    }}
+                />
+
+                <Stack.Screen
+
+                    name="Home"
+                    component={Home}
 
                     initialParams={{
 
