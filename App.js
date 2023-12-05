@@ -106,7 +106,7 @@ function App() {
 
             <Stack.Navigator
 
-                initialRouteName="FullList"
+                initialRouteName="Results"
                 screenOptions={{
 
                     headerShown: false,
