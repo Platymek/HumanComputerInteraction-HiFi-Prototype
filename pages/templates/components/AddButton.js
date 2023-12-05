@@ -187,15 +187,12 @@ export default function AddButton(props) {
                                 
                                 setModalVisible(!modalVisible);
                                 
-                                var newLog = props.log;
-                                newLog[props.birdIndex] 
+                                props.log[props.birdIndex] 
                                     = parseInt(count)
-
-                                props.setLog(newLog)
 
                                 console.log(props.log)
 
-                                props.navigation.navigate('Home', { log: newLog, });
+                                props.navigation.navigate('Home', { log: props.log, });
                             }}
                         />
 

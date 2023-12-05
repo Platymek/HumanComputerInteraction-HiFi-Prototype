@@ -41,7 +41,6 @@ export default function IndividualSearch(props) {
                 colors={props.colors}
                 birds={props.birds}
                 log={props.log}
-                setLog={props.setLog}
                 birdIndex={props.birdIndex}
                 navigation={props.navigation}
                 smallText={true}

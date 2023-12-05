@@ -11,8 +11,8 @@ import { useState } from "react";
 
 export default function Home({ navigation, route }) {
 
-    var { colors, log, setLog, birds, unsureList, setUnsureList } = route.params
-
+    var { colors, log, birds, unsureList, setUnsureList } = route.params
+    
     function Birds(birds, log, colors) {
 
         var birdComponents = [
@@ -36,7 +36,7 @@ export default function Home({ navigation, route }) {
                     title={"Add new bird to log +"}
                     smallText={true}
 
-                    onPress={ () => navigation.navigate("FullList") }
+                    onPress={() => navigation.navigate("FullList", { log: log }) }
                 />
             </Container>
         ]
@@ -53,7 +53,6 @@ export default function Home({ navigation, route }) {
                         birds={birds}
                         navigation={navigation}
                         log={log}
-                        setLog={setLog}
                         birdIndex={Object.keys(log)[i]}
                         key={'logBird' + i}
                         RemoveBird={RemoveBird}
@@ -67,21 +66,17 @@ export default function Home({ navigation, route }) {
 
     console.log(log)
 
-    const [birdList, setBirdList] = useState([Birds(birds, log, colors)]);
+    var birdList = Birds(birds, log, colors);
 
     function RemoveBird(index) {
 
-        var newLog = log;
-
         var intIndex = parseInt(index);
 
-        delete newLog[intIndex];
+        delete log[intIndex];
 
-        console.log(newLog)
+        console.log(log);
 
-        setLog(newLog);
-
-        setBirdList(Birds(birds, newLog, colors))
+        navigation.navigate("Home", { log: log })
     }
 
     return (
@@ -170,7 +165,6 @@ export default function Home({ navigation, route }) {
                     color: colors[2],
                     alignSelf: 'center'
                 }}>
-
                     Scroll Down for More
 
                 </Text>

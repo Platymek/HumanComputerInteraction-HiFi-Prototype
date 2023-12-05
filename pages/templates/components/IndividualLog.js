@@ -62,12 +62,8 @@ export default function IndividualLog(props) {
                             setCount('' + newInt);
                         }
 
-                        var newLog = props.log;
-
-                        newLog[props.birdIndex]
+                        props.log[props.birdIndex]
                             = parseInt(count) - 1
-
-                        props.setLog(newLog)
                     }}
                 />
 
@@ -133,11 +129,8 @@ export default function IndividualLog(props) {
                             setCount('' + newInt);
                         }
 
-                        var newLog = props.log;
-                        newLog[props.birdIndex]
-                            = parseInt(count)
-
-                        props.setLog(newLog)
+                        props.log[props.birdIndex]
+                            = parseInt(count);
                     }}
                 />
             </View>

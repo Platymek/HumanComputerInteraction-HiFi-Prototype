@@ -246,8 +246,7 @@ function App() {
                         colors: colors,
                         birds: birds,
                         infoIndex: infoIndex,
-                        log: log,
-                        setLog: setLog,
+                        log: {},
                         unsureList: unsureList,
                         setUnsureList: setUnsureList,
                     }}
