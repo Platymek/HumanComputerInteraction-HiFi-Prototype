@@ -19,6 +19,7 @@ import Results from './pages/Results';
 import IndividualSearch from './pages/templates/components/IndividualSearch';
 import SearchBirds from './pages/templates/components/SearchBirds';
 import Home from './pages/Home';
+import Questionnaire from './pages/Questionnaire';
 
 function TestHarness({ 
 
@@ -107,7 +108,7 @@ function App() {
 
             <Stack.Navigator
 
-                initialRouteName="Home"
+                initialRouteName="Questionnaire"
 
                 screenOptions={{
 
@@ -237,6 +238,22 @@ function App() {
 
                     name="Home"
                     component={Home}
+
+                    initialParams={{
+
+                        colors: colors,
+                        birds: birds,
+                        infoIndex: infoIndex,
+                        log: {},
+                        unsureList: unsureList,
+                        setUnsureList: setUnsureList,
+                    }}
+                />
+
+                <Stack.Screen
+
+                    name="Questionnaire"
+                    component={Questionnaire}
 
                     initialParams={{
 
