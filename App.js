@@ -108,7 +108,7 @@ function App() {
 
             <Stack.Navigator
 
-                initialRouteName="Questionnaire"
+                initialRouteName="SignUp"
 
                 screenOptions={{
 
