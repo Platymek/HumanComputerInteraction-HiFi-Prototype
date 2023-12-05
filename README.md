@@ -66,11 +66,11 @@ Under each component is listed the properties passed through as a parameter in '
 - (optional) alt: boolean, colour as red instead of green
 
 ### HintButton
-text: text which will appear in the modal
-(optional) alt: boolean, colour as red instead of green
+- text: text which will appear in the modal
+- (optional) alt: boolean, colour as red instead of green
 
-### ScrollBox Component
-Allows children
+### ToggleButton COmponent
+- handletoggle: function when toggling
 
 ### Container
 - style: additional style of container
