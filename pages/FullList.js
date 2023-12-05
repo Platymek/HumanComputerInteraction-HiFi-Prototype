@@ -29,6 +29,7 @@ export default function FullList({
                     navigation={navigation}
                     log={log}
                     setLog={setLog}
+                    maxHeight={500}
                 />
             </Container>
 

@@ -5,6 +5,7 @@ import Container from "./Container";
 import { Image } from "react-native";
 import IndividualSearch from "./IndividualSearch";
 import ScrollingBox from "./ScrollBox";
+import { Text } from "react-native";
 
 /*
 
@@ -34,6 +35,7 @@ export default function SearchBirds(props) {
                         colors={colors}
                         bird={birds[i]}
                         place={i + 1}
+                        key={'bird' + i}
                     />
                 )
             }
@@ -52,6 +54,7 @@ export default function SearchBirds(props) {
                         log={props.log}
                         setLog={props.setLog}
                         birdIndex={i}
+                        key={'bird' + i}
                     />
                 )
             }
@@ -64,13 +67,14 @@ export default function SearchBirds(props) {
 
         <View style={{
 
-            width:'100%'
+            width: '100%',
         }}>
             <View style={{
 
                 width: '100%',
                 flexDirection: 'row',
                 flexWrap: 'wrap',
+                marginTop: -12,
             }}>
 
                 <Image
@@ -89,26 +93,40 @@ export default function SearchBirds(props) {
 
                 <View style={{
 
-                    flex:1
+                    flex:1,
                 }}>
                     <TextBox
 
                         colors={props.colors}
                         title={"Search for Birds"}
                         placeholder={"Enter search here..."}
-                        hintText={"Enter text here to filter out birds by their name. Birds are sorted by number spotted currently"}
+                        hintText={"Enter text here to filter out birds by their name"}
                     />
                 </View>
             </View>
 
-            <Container
+            <ScrollingBox
 
                 colors={props.colors}
                 grey={true}
+                maxHeight={props.maxHeight}
             >
                 {Birds(props.results, props.birds, props.colors)}
 
-            </Container>
+            </ScrollingBox>
+
+            <Text style={{
+
+                marginTop: 8,
+                fontSize: 14,
+                fontWeight: 'bold',
+                color: props.colors[2],
+                alignSelf: 'center'
+            }}>
+
+                Scroll Down for More
+                
+            </Text>
         </View>
     )
 }

@@ -10,6 +10,7 @@ import { ScrollView } from "react-native";
     - colors: color palette of page
     - navigate: navigation class
 	- children: takes in children
+	- admin: admin results page
 
 */
 
@@ -30,8 +31,9 @@ export default function Main(props) {
 
 		<View style={{
 
-			flex: 1,
 			backgroundColor: props.colors[7],
+			height: '100%',
+			flex: 1,
 		}}>
 
 			<Header
@@ -41,12 +43,15 @@ export default function Main(props) {
 
 				hideBack={!showNavButtons}
 				hideHome={!showNavButtons}
+
+				admin={props.admin}
 			/>
 
-			<ScrollView style={{
+			<View style={{
 
 				maxWidth: 500,
-				width:'100%'
+				width: '100%',
+				flex: 1,
 			}}>
 				<View style={{
 
@@ -55,7 +60,7 @@ export default function Main(props) {
 					{props.children}
 
 				</View>
-			</ScrollView>
+			</View>
 
 		</View>
 	)

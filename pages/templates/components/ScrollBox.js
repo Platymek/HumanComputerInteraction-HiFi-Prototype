@@ -4,35 +4,40 @@ import Container from './Container';
 
 export default function ScrollingBox(props) {
 
-  return (
+    return (
 
-    <Container
+        <Container
     
-      colors={props.colors}
-      grey={true}
+            colors={props.colors}
+            grey={true}
 
-      style={{
+            style={{
 
-        flex: 1,
-        borderRadius:30,
-      }}
-    >
-      <ScrollView
+                borderRadius: 30,
+                padding: 0,
+                maxHeight: props.maxHeight,
+            }}
+        >
 
-        style={{
+            <ScrollView
 
-          width: '100%',
-          height: '100%',
-          maxHeight:props.height,
+                style={{
 
-          marginTop:-16,
-          marginBottom:-16,
-        }}
-      >
-        {props.children}
+                    width: '100%',
+                    height: '100%',
+                    padding: 16,
+                }}
 
-          </ScrollView>
+                contentContainerStyle={{
 
-    </Container>
-  );
+                    borderRadius: 30,
+                    paddingBottom: 16,
+                }}
+            >
+                {props.children}
+
+            </ScrollView>
+
+        </Container>
+    );
 }
