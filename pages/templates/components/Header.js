@@ -71,6 +71,62 @@ export default function Header(props) {
         }
     }
 
+    function GetNavButton(admin) {
+
+        if (admin) {
+
+            return (
+
+                <BigButton
+
+                    colors={props.colors}
+                    lite={true}
+                    title={"Sign Out"}
+                    compact={true}
+
+                    onPress={() => {
+
+                        props.navigation.navigate("Admin");
+                    }}
+                />
+            )
+        }
+
+        return (
+            <View style={{
+
+                flexDirection: 'row',
+                flexWrap: 'wrap',
+                alignContent: 'center',
+            }}>
+                <NavButton
+
+                    source={require("../../../assets/back.png")}
+
+                    colors={props.colors}
+                    size={40}
+                    visible={props.hideBack == true}
+
+                    onPress={() => props.navigation.goBack()}
+                />
+
+                <NavButton
+
+                    source={require("../../../assets/home.png")}
+
+                    colors={props.colors}
+                    size={45}
+                    visible={props.hideHome == true}
+
+                    onPress={() => {
+
+                        props.navigation.navigate("Home");
+                    }}
+                />
+            </View>
+        )
+    }
+
     return (
 
         <View style={{
@@ -114,30 +170,7 @@ export default function Header(props) {
 
                     alignItems: 'center',
                 }}>
-                    <NavButton
-
-                        source={require("../../../assets/back.png")}
-
-                        colors={props.colors}
-                        size={40}
-                        visible={props.hideBack == true}
-
-                        onPress={() => props.navigation.goBack()}
-                    />
-
-                    <NavButton
-
-                        source={require("../../../assets/home.png")}
-
-                        colors={props.colors}
-                        size={45}
-                        visible={props.hideHome == true}
-
-                        onPress={() => {
-
-                            props.navigation.navigate("Home");
-                        }}
-                    />
+                    { GetNavButton(props.admin) }
 
                     <Image
 

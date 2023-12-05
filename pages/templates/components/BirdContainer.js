@@ -21,7 +21,7 @@ export default function BirdContainer(props) {
             style={{
 
                 borderRadius: 20,
-                margin: 8,
+                marginBottom: 16,
             }}
         >
             <View style={{
