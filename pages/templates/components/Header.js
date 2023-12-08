@@ -1,6 +1,7 @@
-import { useState } from 'react';
-import { Text, View, Image, StatusBar, Pressable } from 'react-native';
+import { Text, View, Image, StatusBar } from 'react-native';
 import BigButton from './BigButton';
+import NavButton from './NavButton';
+import SettingsButton from './SettingsButton';
 
 /*
 
@@ -17,59 +18,6 @@ import BigButton from './BigButton';
 
 export default function Header(props) {
 
-    function NavButton(props) {
-
-        const [hovering, setHovering] = useState(false);
-
-        if (!props.visible) {
-
-            return (
-
-                <Pressable
-
-                    style={({ pressed }) => [{
-
-                        borderRadius: 16,
-
-                        backgroundColor: pressed || hovering
-                            ? props.colors[4]
-                            : props.colors[1],
-
-                        marginLeft: 4,
-                    }]}
-
-                    onHoverIn={() => {
-
-                        setHovering(true);
-                    }}
-
-                    onHoverOut={() => {
-
-                        setHovering(false);
-                    }}
-
-                    unstable_pressDelay={1}
-
-                    onPress={props.onPress}
-                >
-
-                    <Image
-
-                        source={props.source}
-
-                        style={{
-
-                            width: props.size,
-                            height: props.size,
-                            margin: 9,
-                            tintColor: props.colors[2],
-                        }}
-                    />
-
-                </Pressable>
-            )
-        }
-    }
 
     function GetNavButton(admin) {
 
@@ -123,6 +71,7 @@ export default function Header(props) {
                         props.navigation.navigate("Home");
                     }}
                 />
+
             </View>
         )
     }
@@ -183,6 +132,13 @@ export default function Header(props) {
                             margin: 9,
                         }}
                     />
+
+                    <SettingsButton
+
+                        colors={props.colors}
+                        visible={props.hideHome != true}
+                    />
+
                 </View>
 
                 <View

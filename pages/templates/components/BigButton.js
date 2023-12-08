@@ -39,6 +39,12 @@ export default function BigButton(props) {
             ? props.colors[6]
             : props.colors[2];
 
+    const imageColour = !props.lite
+        ? props.colors[1]
+        : props.alt
+            ? props.colors[6]
+            : props.colors[3];
+
     
     function GetShadow(lite) {
 
@@ -85,6 +91,7 @@ export default function BigButton(props) {
                             width: size,
                             height: size,
                             marginLeft: marginLeft,
+                            tintColor: imageColour,
                         }}
                     />
                 </View>

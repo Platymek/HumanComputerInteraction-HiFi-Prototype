@@ -52,6 +52,15 @@ export default function Questionnaire({
             <Container
 
                 colors={colors}
+
+                style={{
+
+                    marginBottom: 16,
+                    paddingTop: 0,
+                    paddingBottom: 0,
+                    maxWidth: 300,
+                    borderRadius: 20
+                }}
             >
                 <BigButton
 
@@ -59,14 +68,22 @@ export default function Questionnaire({
                     title={"See All Birds"}
                     source={require("../assets/hamburger.png")}
                     small={true}
+                    lite={true}
+                    compact={true}
+                    margin={0}
                     onPress={() => navigation.navigate("FullList", { log: log })}
                 />
+            </Container>
+
+            <Container
+
+                colors={colors}
+            >
 
                 <Text style={{
 
                     fontSize: 18,
                     color: colors[2],
-                    marginTop: 8,
                 }}>
 
                     <Text style={{ fontWeight: 'bold' }}>Answer the questions to identify your bird. </Text>
@@ -140,7 +157,7 @@ export default function Questionnaire({
 
                             style={{
 
-                                width: "45%",
+                                width: "50%",
                             }}
                         >
                             <AddButton
