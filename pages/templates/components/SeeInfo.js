@@ -9,16 +9,27 @@ import BigButton from "./BigButton";
     - birdIndex: index of bird list
     - (optional) smallText: boolean, small text
     - (optional) compact: boolean, compact button
+    - (optional) full: boolean, displays 'Add to log +', not 'Add +'
 */
 
 export default function SeeInfo(props) {
+
+    function getTitle(full) {
+
+        if (full) {
+
+            return 'see info'
+        }
+
+        return 'info'
+    }
 
     return (
 
         <BigButton
 
             colors={props.colors}
-            title={"see info"}
+            title={getTitle(props.full)}
             lite={true}
             smallText={props.smallText == true}
             compact={props.compact == true}
