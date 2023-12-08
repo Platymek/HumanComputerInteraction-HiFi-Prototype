@@ -15,11 +15,11 @@ import Main from './pages/templates/Main';
 import Info from './pages/Info';
 import FullList from './pages/FullList';
 import Results from './pages/Results';
-
-import IndividualSearch from './pages/templates/components/IndividualSearch';
-import SearchBirds from './pages/templates/components/SearchBirds';
 import Home from './pages/Home';
 import Questionnaire from './pages/Questionnaire';
+
+import NewToggle from './pages/templates/components/NewToggle';
+import IndividualLog from './pages/templates/components/IndividualLog';
 
 function TestHarness({ 
 
@@ -29,6 +29,8 @@ function TestHarness({
 
     const { colors, birds, log, setLog } = route.params
 
+    const [toggled, setToggled] = useState(false);
+
     return (
         
         <Main
@@ -36,24 +38,28 @@ function TestHarness({
             colors={colors}
             navigation={navigation}
         >
+            <IndividualLog
+
+                colors={colors}
+                birds={birds}
+                navigation={navigation}
+                log={log}
+                birdIndex={0}
+            />
+
             <Container
 
                 colors={colors}
             >
-                <SearchBirds
+                <NewToggle
 
                     colors={colors}
-                    birds={birds}
-                    results={false}
-                    navigation={navigation}
-                    log={log}
-                    setLog={setLog}
-                />
-                <SearchBirds
+                    toggled={toggled}
 
-                    colors={colors}
-                    birds={birds}
-                    results={true}
+                    onToggled={() => {
+
+                        setToggled(!toggled)
+                    }}
                 />
             </Container>
             
@@ -108,7 +114,7 @@ function App() {
 
             <Stack.Navigator
 
-                initialRouteName="SignUp"
+                initialRouteName="TestHarness"
 
                 screenOptions={{
 

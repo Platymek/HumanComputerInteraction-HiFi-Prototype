@@ -118,25 +118,40 @@ export default function Questionnaire({
 
                         flexDirection: 'row',
                         flexWrap: 'wrap',
-                        justifyContent: 'space-between',
+                        justifyContent: 'space-around',
+                        width: "100%",
                     }}>
-                        <AddButton
+                        <View
 
-                            colors={colors}
-                            birds={birds}
-                            log={log}
-                            birdIndex={questionNumber}
-                            navigation={navigation}
-                        />
+                            style={{
 
-                        <SeeInfo
+                                width: "45%",
+                            }}
+                        >
+                            <SeeInfo
 
+                                colors={colors}
+                                navigation={navigation}
+                                birdIndex={questionNumber}
+                            />
+                        </View>
 
-                            colors={colors}
-                            navigation={navigation}
-                            birdIndex={questionNumber}
-                            compact={true}
-                        />
+                        <View
+
+                            style={{
+
+                                width: "45%",
+                            }}
+                        >
+                            <AddButton
+
+                                colors={colors}
+                                birds={birds}
+                                log={log}
+                                birdIndex={questionNumber}
+                                navigation={navigation}
+                            />
+                        </View>
 
                     </View>
 
@@ -165,10 +180,13 @@ export default function Questionnaire({
 
                 <View style={{
 
-                    justifyContent: 'space-between',
+                    justifyContent: 'space-evenly',
                     flexDirection: 'row',
                     flexWrap: 'wrap',
                     marginTop: 22,
+                    width: "100%",
+                    paddingLeft: 16,
+                    paddingRight: 16,
                 }}>
 
                     <View style={{ width: "40%" }}>
@@ -176,7 +194,7 @@ export default function Questionnaire({
                         <BigButton
 
                             colors={colors}
-                            title={"No"}
+                            title={"no"}
                             alt={true}
 
                             onPress={() => {
@@ -194,7 +212,7 @@ export default function Questionnaire({
                         <BigButton
 
                             colors={colors}
-                            title={"Yes"}
+                            title={"yes"}
 
                             onPress={() => {
 

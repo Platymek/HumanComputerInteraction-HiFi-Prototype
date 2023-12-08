@@ -28,10 +28,10 @@ export default function AddButton(props) {
 
         if (full){  
 
-            return 'Add to log +'
+            return 'add to log +'
         }
 
-        return 'Add +'
+        return 'add +'
     }
 
     return (

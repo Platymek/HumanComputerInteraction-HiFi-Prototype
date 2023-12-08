@@ -28,24 +28,47 @@ export default function IndividualSearch(props) {
             colors={props.colors}
             bird={props.birds[props.birdIndex]}
         >
-            <SeeInfo
+            <View style={{
 
-                colors={props.colors}
-                birdIndex={props.birdIndex}
-                navigation={props.navigation}
-                smallText={true}
-                compact={true}
-            />
-            <AddButton
+                flexDirection: 'row',
+                flexWrap: 'wrap',
+                justifyContent: 'space-around',
+                width: "100%",
+            }}>
+                <View
 
-                colors={props.colors}
-                birds={props.birds}
-                log={props.log}
-                birdIndex={props.birdIndex}
-                navigation={props.navigation}
-                smallText={true}
-                compact={true}
-            />
+                    style={{
+
+                        width: "50%",
+                    }}
+                >
+                    <SeeInfo
+
+                        colors={props.colors}
+                        navigation={props.navigation}
+                        birdIndex={props.birdIndex}
+                    />
+                </View>
+
+                <View
+
+                    style={{
+
+                        width: "50%",
+                    }}
+                >
+                    <AddButton
+
+                        colors={props.colors}
+                        birds={props.birds}
+                        log={props.log}
+                        birdIndex={props.birdIndex}
+                        navigation={props.navigation}
+                    />
+                </View>
+
+            </View>
+
         </BirdContainer>
     )
 }
