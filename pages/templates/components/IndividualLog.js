@@ -24,9 +24,9 @@ export default function IndividualLog(props) {
             <View style={{
 
                 flexDirection: 'row',
-                flexWrap: 'wrap',
                 alignItems: 'center',
                 justifyContent: 'space-between',
+                flexWrap: 'wrap',
                 width: '100%',
 
                 marginLeft: -8,
@@ -34,20 +34,17 @@ export default function IndividualLog(props) {
 
                 <View style={{
 
+                    alignItems: 'flex-start',
                     flexDirection: 'row',
-                    flexWrap: 'wrap',
                     alignItems: 'center',
-                    justifyContent: 'center',
-                    width: "50%",
                 }}>
-
                     <BigButton
 
                         colors={props.colors}
                         title={"-"}
                         lite={true}
                         compact={true}
-                        margin={-2}
+                        margin={0}
 
                         onPress={() => {
 
@@ -80,19 +77,20 @@ export default function IndividualLog(props) {
                         style={{
 
                             padding: 0,
-                            maxWidth: 50,
+                            width: 50,
                             justifyContent: 'center',
                             borderRadius: 20,
+                            height: 50,
                         }}
                     >
                         <TextInput
 
                             style={{
 
-                                maxWidth: 48,
                                 color: props.colors[3],
                                 fontSize: 24,
                                 textAlign: 'center',
+                                maxWidth: 50,
                             }}
 
                             value={count}
@@ -120,7 +118,7 @@ export default function IndividualLog(props) {
                         title={"+"}
                         lite={true}
                         compact={true}
-                        margin={-6}
+                        margin={-2}
 
                         onPress={() => {
 
@@ -139,6 +137,7 @@ export default function IndividualLog(props) {
                                 = parseInt(count);
                         }}
                     />
+
                 </View>
 
                 <View style={{
