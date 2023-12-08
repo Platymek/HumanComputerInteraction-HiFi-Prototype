@@ -21,14 +21,15 @@ export default function IndividualLog(props) {
             colors={props.colors}
             bird={props.birds[props.birdIndex]}
         >
-
             <View style={{
 
                 flexDirection: 'row',
                 flexWrap: 'wrap',
                 alignItems: 'center',
-                justifyContent: 'space-around',
-                width: '100%'
+                justifyContent: 'space-between',
+                width: '100%',
+
+                marginLeft: -8,
             }}>
 
                 <View style={{
@@ -36,7 +37,8 @@ export default function IndividualLog(props) {
                     flexDirection: 'row',
                     flexWrap: 'wrap',
                     alignItems: 'center',
-                    margin: -8,
+                    justifyContent: 'center',
+                    width: "50%",
                 }}>
 
                     <BigButton
@@ -45,7 +47,7 @@ export default function IndividualLog(props) {
                         title={"-"}
                         lite={true}
                         compact={true}
-                        margin={0}
+                        margin={-2}
 
                         onPress={() => {
 
@@ -87,7 +89,7 @@ export default function IndividualLog(props) {
 
                             style={{
 
-                                width: '100%',
+                                maxWidth: 48,
                                 color: props.colors[3],
                                 fontSize: 24,
                                 textAlign: 'center',
@@ -118,7 +120,7 @@ export default function IndividualLog(props) {
                         title={"+"}
                         lite={true}
                         compact={true}
-                        margin={0}
+                        margin={-6}
 
                         onPress={() => {
 

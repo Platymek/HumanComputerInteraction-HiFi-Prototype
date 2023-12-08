@@ -114,7 +114,7 @@ function App() {
 
             <Stack.Navigator
 
-                initialRouteName="TestHarness"
+                initialRouteName="Home"
 
                 screenOptions={{
 
