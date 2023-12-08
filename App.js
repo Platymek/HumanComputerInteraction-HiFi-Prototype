@@ -19,6 +19,7 @@ import Home from './pages/Home';
 import Questionnaire from './pages/Questionnaire';
 
 import NewToggle from './pages/templates/components/NewToggle';
+import IndividualLog from './pages/templates/components/IndividualLog';
 
 function TestHarness({ 
 
@@ -37,6 +38,15 @@ function TestHarness({
             colors={colors}
             navigation={navigation}
         >
+            <IndividualLog
+
+                colors={colors}
+                birds={birds}
+                navigation={navigation}
+                log={log}
+                birdIndex={0}
+            />
+
             <Container
 
                 colors={colors}

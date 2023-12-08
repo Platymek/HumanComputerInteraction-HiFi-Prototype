@@ -3,6 +3,7 @@ import { useState } from "react";
 import BirdContainer from './BirdContainer'
 import BigButton from "./BigButton";
 import Container from "./Container";
+import NewToggle from './NewToggle';
 
 export default function IndividualLog(props) {
 
@@ -10,6 +11,8 @@ export default function IndividualLog(props) {
 
         '' + (props.log[props.birdIndex])
     );
+
+    const [toggled, setToggled] = useState(false);
 
     return (
 
@@ -24,115 +27,148 @@ export default function IndividualLog(props) {
                 flexDirection: 'row',
                 flexWrap: 'wrap',
                 alignItems: 'center',
-            }}>
-            </View>
-
-            <View style={{
-
-                flexDirection: 'row',
-                flexWrap: 'wrap',
-                alignItems: 'center',
-                margin: -8,
+                justifyContent: 'space-around',
+                width: '100%'
             }}>
 
-                <BigButton
+                <View style={{
 
-                    colors={props.colors}
-                    title={"-"}
-                    lite={true}
-                    compact={true}
-                    margin={0}
+                    flexDirection: 'row',
+                    flexWrap: 'wrap',
+                    alignItems: 'center',
+                    margin: -8,
+                }}>
 
-                    onPress={() => {
+                    <BigButton
 
-                        var newInt = parseInt(count);
-                        newInt--;
+                        colors={props.colors}
+                        title={"-"}
+                        lite={true}
+                        compact={true}
+                        margin={0}
 
-                        if (newInt < 1) {
+                        onPress={() => {
 
-                            props.RemoveBird(props.birdIndex)
-                        }
+                            var newInt = parseInt(count);
+                            newInt--;
 
-                        if (count == "") {
+                            if (newInt < 1) {
 
-                            setCount("1");
-                        }
-                        else {
-
-                            setCount('' + newInt);
-                        }
-
-                        props.log[props.birdIndex]
-                            = parseInt(count) - 1
-                    }}
-                />
-
-                <Container
-
-                    colors={props.colors}
-                    grey={true}
-                    style={{
-
-                        padding: 0,
-                        maxWidth: 50,
-                        justifyContent: 'center',
-                        borderRadius: 20,
-                    }}
-                >
-                    <TextInput
-
-                        style={{
-
-                            width: '100%',
-                            color: props.colors[3],
-                            fontSize: 24,
-                            textAlign: 'center',
-                        }}
-
-                        value={count}
-                        inputMode={'numeric'}
-
-                        onChangeText={(text) => {
-
-                            if (!isNaN(text)) {
-
-                                setCount(text);
-
-                                var newLog = props.log;
-                                newLog[props.birdIndex]
-                                    = parseInt(count)
-
-                                props.setLog(newLog)
+                                props.RemoveBird(props.birdIndex)
                             }
+
+                            if (count == "") {
+
+                                setCount("1");
+                            }
+                            else {
+
+                                setCount('' + newInt);
+                            }
+
+                            props.log[props.birdIndex]
+                                = parseInt(count) - 1
                         }}
                     />
-                </Container>
 
-                <BigButton
+                    <Container
 
-                    colors={props.colors}
-                    title={"+"}
-                    lite={true}
-                    compact={true}
-                    margin={0}
+                        colors={props.colors}
+                        grey={true}
+                        style={{
 
-                    onPress={() => {
+                            padding: 0,
+                            maxWidth: 50,
+                            justifyContent: 'center',
+                            borderRadius: 20,
+                        }}
+                    >
+                        <TextInput
 
-                        var newInt = parseInt(count);
-                        newInt++;
+                            style={{
 
-                        if (count == "") {
+                                width: '100%',
+                                color: props.colors[3],
+                                fontSize: 24,
+                                textAlign: 'center',
+                            }}
 
-                            setCount("1");
-                        }
-                        else {
-                            setCount('' + newInt);
-                        }
+                            value={count}
+                            inputMode={'numeric'}
 
-                        props.log[props.birdIndex]
-                            = parseInt(count);
-                    }}
-                />
+                            onChangeText={(text) => {
+
+                                if (!isNaN(text)) {
+
+                                    setCount(text);
+
+                                    var newLog = props.log;
+                                    newLog[props.birdIndex]
+                                        = parseInt(count)
+
+                                    props.setLog(newLog)
+                                }
+                            }}
+                        />
+                    </Container>
+
+                    <BigButton
+
+                        colors={props.colors}
+                        title={"+"}
+                        lite={true}
+                        compact={true}
+                        margin={0}
+
+                        onPress={() => {
+
+                            var newInt = parseInt(count);
+                            newInt++;
+
+                            if (count == "") {
+
+                                setCount("1");
+                            }
+                            else {
+                                setCount('' + newInt);
+                            }
+
+                            props.log[props.birdIndex]
+                                = parseInt(count);
+                        }}
+                    />
+                </View>
+
+                <View style={{
+
+                    flexDirection: 'row',
+                    flexWrap: 'wrap',
+                    alignItems: 'center',
+                }}>
+
+                    <Text style={{
+
+                        fontSize: 18,
+                        color: props.colors[2],
+                        paddingRight: 8,
+                        fontWeight: 'bold',
+                    }}>
+                        Unsure?
+
+                    </Text>
+
+                    <NewToggle
+
+                        colors={props.colors}
+                        toggled={toggled}
+
+                        onToggled={() => {
+
+                            setToggled(!toggled)
+                        }}
+                    />
+
+                </View>
             </View>
 
         </BirdContainer>

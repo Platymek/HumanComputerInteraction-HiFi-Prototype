@@ -38,8 +38,13 @@ export default function NewToggle(props) {
 
                 style={{
 
-                    width: 20,
-                    height: 20,
+                    width: props.toggled
+                        ? 20
+                        : 16,
+
+                    height: props.toggled
+                        ? 20
+                        : 16,
 
                     tintColor: props.toggled
                         ? props.colors[1]
