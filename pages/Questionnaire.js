@@ -213,6 +213,7 @@ export default function Questionnaire({
                             colors={colors}
                             title={"no"}
                             alt={true}
+                            lite={true}
 
                             onPress={() => {
 
@@ -222,7 +223,13 @@ export default function Questionnaire({
                         />
                     </View>
 
-                    <View style={{ width: "10%" }} />
+                    <View style={{
+
+                        width: "1%",
+                        height: 50,
+                        alignSelf: 'center',
+                        backgroundColor: colors[7],
+                    }}/>
 
                     <View style={{ width: "40%" }}>
 
@@ -230,6 +237,7 @@ export default function Questionnaire({
 
                             colors={colors}
                             title={"yes"}
+                            lite={true}
 
                             onPress={() => {
 

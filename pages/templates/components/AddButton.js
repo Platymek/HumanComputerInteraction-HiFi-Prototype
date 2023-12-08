@@ -44,6 +44,14 @@ export default function AddButton(props) {
                 visible={modalVisible}
                 transparent={true}
 
+                style={{
+
+                    flex: 1,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    backgroundColor: props.colors[7] + '88',
+                }}
+
                 onRequestClose={() => {
 
                     setModalVisible(!modalVisible)
