@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import lightColors from './ColorsUpdated'
+import darkColors from './ColorsDark'
 import birds from './Birds'
 
 import SignUp from './pages/SignUp';
@@ -100,7 +101,7 @@ function App() {
     const [log, setLog] = useState({});
 
     // current list of colours (defaults to lightColors from Colors.js)
-    const [colors, setColors] = useState(lightColors);
+    const [colors, setColors] = useState(darkColors);
 
     // index of bird on info page
     const [infoIndex, setInfoIndex] = useState(0);

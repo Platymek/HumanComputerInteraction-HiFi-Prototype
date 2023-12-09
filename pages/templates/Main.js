@@ -106,7 +106,7 @@ export default function Main(props) {
 			>
 				<View style={{
 
-					maxWidth: 500,
+					maxWidth: 1000,
 					padding: 16,
 					width: '100%',
 					justifyContent: 'center',

@@ -11,8 +11,9 @@ export default function HelpPage({ navigation, route }) {
       style={{ 
         
         flex: 1,
-        maxWidth: 500,
-        alignSelf:'center',
+        alignSelf: 'center',
+        backgroundColor: colors[1],
+        width: '100%',
       }}
     >
       <StatusBar
@@ -22,7 +23,13 @@ export default function HelpPage({ navigation, route }) {
           barStyle='dark-content'
       />
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 16, backgroundColor: colors[7], }}>
-        <Container colors={colors} >
+        <Container colors={colors}
+
+            style={{
+
+                maxWidth: 500,
+            }}
+        >
           <BigButton 
           
             colors={colors}
