@@ -8,6 +8,7 @@ import BigButton from "./BigButton";
 
 import lightColors from '../../../ColorsUpdated'
 import darkColors from '../../../ColorsDark'
+import contrastColors from '../../../ColorsContrast'
 import NewToggle from "./NewToggle";
 
 /*
@@ -24,6 +25,7 @@ export default function SettingsButton(props) {
 
     const [modalVisible, setModalVisible] = useState(false);
     const [darkMode, setDarkMode] = useState(false);
+    const [highContrast, setHighContrast] = useState(false);
 
     return (
 
@@ -130,14 +132,35 @@ export default function SettingsButton(props) {
                                 color: props.colors[2],
                                 fontSize: 22,
                             }}>
-                                Large Text?
+                                High Contrast Mode?
 
                             </Text>
 
                             <NewToggle
 
                                 colors={props.colors}
-                                toggled={darkMode}
+                                toggled={highContrast}
+
+                                onToggled={() => {
+
+                                    setHighContrast(!highContrast);
+
+                                    if (highContrast) {
+
+                                        if (darkMode) {
+
+                                            props.setPageColors(darkColors);
+                                        }
+                                        else {
+
+                                            props.setPageColors(lightColors);
+                                        }
+                                    }
+                                    else {
+
+                                        props.setPageColors(contrastColors);
+                                    }
+                                }}
                             />
                         </View>
 
@@ -153,7 +176,7 @@ export default function SettingsButton(props) {
                                 color: props.colors[2],
                                 fontSize: 22,
                             }}>
-                                High Contrast Mode?
+                                Large Text?
 
                             </Text>
 

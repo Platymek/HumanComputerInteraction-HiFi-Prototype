@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import lightColors from './ColorsUpdated'
 import darkColors from './ColorsDark'
+import contrastColors from './ColorsContrast'
 import birds from './Birds'
 
 import SignUp from './pages/SignUp';
