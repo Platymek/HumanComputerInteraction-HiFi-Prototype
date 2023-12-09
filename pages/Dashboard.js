@@ -19,25 +19,34 @@ export default function Dashboard({ navigation, route }) {
                 alignItems: 'center',
                 justifyContent: 'center',
                 backgroundColor: colors[7],
-                width:'100%'
+                width: '100%',
             }}
         >
             <View 
                 style={{
 
                     padding: 16,
-                    maxWidth: 500,
-                    width:'100%'
+                    maxWidth: 400,
+                    width: '100%',
                 }}
             >{/* Title and start session section */}
-                <Container colors={colors}>
+                <Container
+
+                    colors={colors}
+                    style={{
+
+                        borderRadius: 32,
+                    }}
+                >
 
                     <Text style={{
 
                         fontSize: 18,
                         color: colors[2],
                         textAlign: 'center',
-                        margin: 16,
+                        marginLeft: 16,
+                        marginRight: 16,
+                        marginBottom: 16,
                         width:'100%'
                     }}>
                         <Text style={{ fontWeight: 'bold' }}> Your 1 hour session timer will start when the button is pressed. </Text>
@@ -55,7 +64,7 @@ export default function Dashboard({ navigation, route }) {
 
                         onPress={() => {
 
-                            navigation.navigate("Home")
+                            navigation.navigate("Home", { colors: colors })
                         }}
                     />
                 </Container>
@@ -71,7 +80,12 @@ export default function Dashboard({ navigation, route }) {
 
                     style={{
 
-                        justifyContent:'space-between'
+                        justifyContent: 'space-between',
+                        borderRadius: 32,
+                        maxWidth: 330,
+                        alignSelf: 'center',
+                        padding: 8,
+                        paddingRight: 16,
                     }}
                 >
                     <View 

@@ -19,7 +19,7 @@ export default function GuideButton(props) {
 
                 onPress={() => {
 
-                    props.navigation.navigate("Questionnaire");
+                    props.navigation.navigate("Questionnaire", { colors: props.colors });
                 }}
             />
         </View>

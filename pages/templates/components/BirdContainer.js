@@ -22,11 +22,15 @@ export default function BirdContainer(props) {
 
                 borderRadius: 20,
                 marginBottom: 16,
+                flexDirection: 'row',
+                flexWrap: 'wrap',
+                justifyContent: 'space-between',
             }}
         >
             <View style={{
                 
                 width: '100%',
+                maxWidth: 300,
 
                 flexDirection: 'row',
                 flexWrap: 'wrap',
@@ -62,11 +66,12 @@ export default function BirdContainer(props) {
                 style={{
 
                     flexDirection: 'row',
-                    flexWrap: 'wrap',
                     justifyContent: 'space-between',
                     alignItems: 'center',
+                    alignSelf: 'flex-end',
                     width: '100%',
                     marginBottom: -8,
+                    maxWidth: 300,
                 }}
             >
                 {props.children}

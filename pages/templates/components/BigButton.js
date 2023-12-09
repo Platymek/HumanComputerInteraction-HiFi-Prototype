@@ -39,6 +39,12 @@ export default function BigButton(props) {
             ? props.colors[6]
             : props.colors[2];
 
+    const imageColour = !props.lite
+        ? props.colors[1]
+        : props.alt
+            ? props.colors[6]
+            : props.colors[3];
+
     
     function GetShadow(lite) {
 
@@ -85,6 +91,7 @@ export default function BigButton(props) {
                             width: size,
                             height: size,
                             marginLeft: marginLeft,
+                            tintColor: imageColour,
                         }}
                     />
                 </View>
@@ -127,6 +134,7 @@ export default function BigButton(props) {
 
                     borderRadius: 12,
                     alignItems: 'center',
+
                 }, GetShadow(props.lite)]}
 
                 onHoverIn={() => {
@@ -168,9 +176,14 @@ export default function BigButton(props) {
                         style={{
 
                             color: textColor,
+
                             fontSize: props.smallText
                                 ? 20
                                 : 28,
+
+                            fontWeight: props.lite || props.smallText
+                                ? 'bold'
+                                : null,
 
                             textAlign: 'center'
                         }}

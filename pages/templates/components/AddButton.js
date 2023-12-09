@@ -44,6 +44,14 @@ export default function AddButton(props) {
                 visible={modalVisible}
                 transparent={true}
 
+                style={{
+
+                    flex: 1,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    backgroundColor: props.colors[7] + '88',
+                }}
+
                 onRequestClose={() => {
 
                     setModalVisible(!modalVisible)
@@ -135,7 +143,8 @@ export default function AddButton(props) {
                                     style={{
                                         
                                         width: '100%',
-                                        color: props.colors[3],
+                                        color: props.colors[2],
+                                        fontWeight: 'bold',
                                         fontSize: 32,
                                         textAlign: 'center',
                                     }}
@@ -192,7 +201,7 @@ export default function AddButton(props) {
 
                                 console.log(props.log)
 
-                                props.navigation.navigate('Home', { log: props.log, });
+                                props.navigation.navigate('Home', { log: props.log, colors: props.colors });
                             }}
                         />
 

@@ -48,7 +48,6 @@ export default function Main(props) {
 						width: 200,
 					}}
 				>
-					{ }
 					<BigButton
 
 						colors={props.colors}
@@ -82,6 +81,8 @@ export default function Main(props) {
 				hideHome={!showNavButtons}
 
 				admin={props.admin}
+
+				setPageColors={props.setPageColors}
 			/>
 
 			<ScrollView
@@ -106,7 +107,7 @@ export default function Main(props) {
 			>
 				<View style={{
 
-					maxWidth: 500,
+					maxWidth: 750,
 					padding: 16,
 					width: '100%',
 					justifyContent: 'center',

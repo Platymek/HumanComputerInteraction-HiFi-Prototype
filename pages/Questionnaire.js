@@ -52,6 +52,15 @@ export default function Questionnaire({
             <Container
 
                 colors={colors}
+
+                style={{
+
+                    marginBottom: 16,
+                    paddingTop: 0,
+                    paddingBottom: 0,
+                    maxWidth: 300,
+                    borderRadius: 20
+                }}
             >
                 <BigButton
 
@@ -59,14 +68,23 @@ export default function Questionnaire({
                     title={"See All Birds"}
                     source={require("../assets/hamburger.png")}
                     small={true}
-                    onPress={() => navigation.navigate("FullList", { log: log })}
+                    lite={true}
+                    compact={true}
+                    margin={0}
+                    onPress={() => navigation.navigate("FullList", { log: log, colors: colors })}
                 />
+            </Container>
+
+            <Container
+
+                colors={colors}
+            >
 
                 <Text style={{
 
                     fontSize: 18,
                     color: colors[2],
-                    marginTop: 8,
+                    margin: 8,
                 }}>
 
                     <Text style={{ fontWeight: 'bold' }}>Answer the questions to identify your bird. </Text>
@@ -140,7 +158,7 @@ export default function Questionnaire({
 
                             style={{
 
-                                width: "45%",
+                                width: "50%",
                             }}
                         >
                             <AddButton
@@ -196,6 +214,7 @@ export default function Questionnaire({
                             colors={colors}
                             title={"no"}
                             alt={true}
+                            lite={true}
 
                             onPress={() => {
 
@@ -205,7 +224,13 @@ export default function Questionnaire({
                         />
                     </View>
 
-                    <View style={{ width: "10%" }} />
+                    <View style={{
+
+                        width: "1%",
+                        height: 50,
+                        alignSelf: 'center',
+                        backgroundColor: colors[7],
+                    }}/>
 
                     <View style={{ width: "40%" }}>
 
@@ -213,6 +238,7 @@ export default function Questionnaire({
 
                             colors={colors}
                             title={"yes"}
+                            lite={true}
 
                             onPress={() => {
 

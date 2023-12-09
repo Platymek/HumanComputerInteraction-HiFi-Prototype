@@ -3,12 +3,14 @@ import { View, Image } from 'react-native';
 import BigButton from './components/BigButton';
 import HyperLinkText from './components/HyperLinkText';
 import Container from './components/Container';
+import SettingsButton from './components/SettingsButton';
+import { useState } from 'react';
 
 /*
     - Account Template -
 
     props:
-    - colors: color palette of page
+    - pageColors: color palette of page
     - buttonName: title of button
     - navigation: navigation object
     - onButtonPress: function on button press
@@ -39,6 +41,11 @@ export default function Account(props) {
 
                         alignItems: 'center',
                         justifyContent: 'center',
+                        flexDirection: 'row',
+                        justifyContent: 'space-between',
+                        width: '100%',
+                        paddingLeft: 16,
+                        paddingRight: 16,
                     }}
                 >
                     <Image
@@ -50,6 +57,12 @@ export default function Account(props) {
                             width: 50,
                             height: 50,
                         }}
+                    />
+
+                    <SettingsButton
+
+                        colors={props.colors}
+                        setPageColors={props.setPageColors}
                     />
                 </View>
 
@@ -87,7 +100,7 @@ export default function Account(props) {
 
                     onPress={() => {
 
-                        props.navigation.navigate(props.hyperPage)
+                        props.navigation.navigate(props.hyperPage, { colors: props.colors })
                     }}
                 />
             </Container>

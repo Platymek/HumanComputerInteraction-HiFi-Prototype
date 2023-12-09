@@ -87,10 +87,11 @@ export default function IndividualLog(props) {
 
                             style={{
 
-                                color: props.colors[3],
+                                color: props.colors[2],
                                 fontSize: 24,
                                 textAlign: 'center',
                                 maxWidth: 50,
+                                fontWeight: 'bold'
                             }}
 
                             value={count}

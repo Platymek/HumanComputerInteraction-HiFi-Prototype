@@ -36,7 +36,7 @@ export default function SeeInfo(props) {
 
             onPress={() => {
 
-                props.navigation.navigate("Info", { infoIndex: props.birdIndex })
+                props.navigation.navigate("Info", { infoIndex: props.birdIndex, colors: props.colors })
             }}
         />
     )
