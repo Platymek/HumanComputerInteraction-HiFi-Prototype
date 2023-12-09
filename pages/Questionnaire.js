@@ -71,7 +71,7 @@ export default function Questionnaire({
                     lite={true}
                     compact={true}
                     margin={0}
-                    onPress={() => navigation.navigate("FullList", { log: log })}
+                    onPress={() => navigation.navigate("FullList", { log: log, colors: colors })}
                 />
             </Container>
 

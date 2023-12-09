@@ -6,6 +6,10 @@ import Container from "./Container";
 import { Image } from "react-native";
 import BigButton from "./BigButton";
 
+import lightColors from '../../../ColorsUpdated'
+import darkColors from '../../../ColorsDark'
+import NewToggle from "./NewToggle";
+
 /*
 
     - SettingsButton Component -
@@ -19,6 +23,7 @@ import BigButton from "./BigButton";
 export default function SettingsButton(props) {
 
     const [modalVisible, setModalVisible] = useState(false);
+    const [darkMode, setDarkMode] = useState(false);
 
     return (
 
@@ -38,6 +43,7 @@ export default function SettingsButton(props) {
 
                     alignItems: 'center',
                     justifyContent: 'center',
+                    backgroundColor: props.colors[7] + '88',
                     flex: 1,
                 }}>
                     <Container
@@ -47,6 +53,7 @@ export default function SettingsButton(props) {
                         style={{
 
                             maxWidth: 300,
+                            padding: 32,
                         }}
                     >
                         <Image
@@ -58,7 +65,6 @@ export default function SettingsButton(props) {
                                 width: 50,
                                 height: 50,
                                 margin: 16,
-                                marginBottom: 32,
                             }}
 
                             tintColor={props.colors[2]}
@@ -68,11 +74,48 @@ export default function SettingsButton(props) {
 
                             fontSize: 32,
                             color: props.colors[2],
+                            fontWeight: 'bold',
                         }}>
                             Settings
                         </Text>
 
                         <View style={{ paddingTop: 32 }} />
+
+                        <View style={{
+
+                            width: '100%',
+                            flexDirection: 'row',
+                            justifyContent: 'space-between',
+                        }}>
+                            <Text style={{
+
+                                color: props.colors[2],
+                                fontSize: 22,
+                            }}>
+                                Dark Mode?
+
+                            </Text>
+
+                            <NewToggle
+
+                                colors={props.colors}
+                                toggled={darkMode}
+
+                                onToggled={() => {
+
+                                    if (darkMode) {
+
+                                        props.setPageColors(lightColors);
+                                    }
+                                    else {
+
+                                        props.setPageColors(darkColors);
+                                    }
+
+                                    setDarkMode(!darkMode);
+                                }}
+                            />
+                        </View>
 
                         <View style={{ paddingTop: 32 }} />
 

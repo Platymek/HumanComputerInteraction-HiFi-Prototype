@@ -36,7 +36,7 @@ export default function Home({ navigation, route }) {
                     title={"Add new bird to log +"}
                     smallText={true}
 
-                    onPress={() => navigation.navigate("FullList", { log: log }) }
+                    onPress={() => navigation.navigate("FullList", { log: log, colors: colors }) }
                 />
             </Container>
         ]
@@ -76,7 +76,7 @@ export default function Home({ navigation, route }) {
 
         console.log(log);
 
-        navigation.navigate("Home", { log: log })
+        navigation.navigate("Home", { log: log, colors: colors })
     }
 
     return (

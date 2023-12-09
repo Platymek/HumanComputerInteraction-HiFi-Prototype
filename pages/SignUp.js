@@ -11,6 +11,7 @@ export default function SignUp({ navigation, route }) {
     var { colors } = route.params
 
     const [modalVisible, setModalVisible] = useState(false);
+    const [pageColors, setPageColors] = useState(colors);
 
     return (
 
@@ -20,7 +21,7 @@ export default function SignUp({ navigation, route }) {
                 flex: 1,
                 alignItems: 'center',
                 justifyContent: 'center',
-                backgroundColor: colors[7],
+                backgroundColor: pageColors[7],
             }}>
 
             <Modal
@@ -40,12 +41,12 @@ export default function SignUp({ navigation, route }) {
                         flex: 1,
                         justifyContent: 'center',
                         alignItems: 'center',
-                        backgroundColor: colors[7] + '88',
+                        backgroundColor: pageColors[7] + '88',
                     }}
                 >
                     <Container
 
-                        colors={colors}
+                        colors={pageColors}
 
                         style={{
 
@@ -57,7 +58,7 @@ export default function SignUp({ navigation, route }) {
 
                             style={{
 
-                                color: colors[2],
+                                color: pageColors[2],
                                 fontSize: 24,
                                 margin: 16,
                                 marginTop: 32,
@@ -70,19 +71,19 @@ export default function SignUp({ navigation, route }) {
 
                         <BigButton
 
-                            colors={colors}
+                            colors={pageColors}
                             title={"I have verified my email"}
 
                             onPress={() => {
 
                                 setModalVisible(!modalVisible)
-                                navigation.navigate("Dashboard")
+                                navigation.navigate("Dashboard", { colors: pageColors })
                             }}
                         />
 
                         <BigButton
 
-                            colors={colors}
+                            colors={pageColors}
                             title={"Cancel"}
                             lite={true}
 
@@ -97,7 +98,8 @@ export default function SignUp({ navigation, route }) {
 
             <Account
 
-                colors={colors}
+                colors={pageColors}
+                setPageColors={setPageColors}
 
                 buttonTitle={"Sign Up"}
                 navigation={navigation}
@@ -117,7 +119,7 @@ export default function SignUp({ navigation, route }) {
                     padding: 4,
                     fontSize: 18,
 
-                    color: colors[2],
+                    color: pageColors[2],
                 }}>
                     <Text style={{ fontWeight: "bold" }}>Enter your details to sign up for the Big Garden Birdwatch! </Text>
                     <Text>Entering your details does not start your 1 hour session.</Text>
@@ -130,7 +132,7 @@ export default function SignUp({ navigation, route }) {
 
                 <TextBox
 
-                    colors={colors}
+                    colors={pageColors}
                     title={"Email"}
                     placeholder={"example@mail.com"}
                     alt={false}
@@ -138,7 +140,7 @@ export default function SignUp({ navigation, route }) {
 
                 <TextBox
 
-                    colors={colors}
+                    colors={pageColors}
                     title={"Postcode"}
                     placeholder={"AB1 2CD"}
                     alt={false}
@@ -146,7 +148,7 @@ export default function SignUp({ navigation, route }) {
 
                 <TextBox
 
-                    colors={colors}
+                    colors={pageColors}
                     title={"Address"}
                     placeholder={"House Name, Street, City"}
                     hintText={"Only one session can be started for every household"}

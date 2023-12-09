@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+﻿import { useEffect, useState } from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -28,20 +28,22 @@ function TestHarness({
     route,
 }) {
 
-    const { colors, birds, log, setLog } = route.params
+    const { colors, setColors, getColors, toggleDarkMode, darkMode, birds, log, setLog, handleLightMode, handleDarkMode } = route.params
 
     const [toggled, setToggled] = useState(false);
+    const [pageColors, setPageColors] = useState(colors);
 
     return (
         
         <Main
 
-            colors={colors}
+            colors={pageColors}
             navigation={navigation}
+            setPageColors={setPageColors}
         >
             <IndividualLog
 
-                colors={colors}
+                colors={pageColors}
                 birds={birds}
                 navigation={navigation}
                 log={log}
@@ -50,18 +52,43 @@ function TestHarness({
 
             <Container
 
-                colors={colors}
+                colors={pageColors}
             >
-                <NewToggle
+                <View style={{
 
-                    colors={colors}
-                    toggled={toggled}
+                    width: '100%',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                }}>
+                    <Text style={{
 
-                    onToggled={() => {
+                        color: pageColors[2],
+                        fontSize: 22,
+                    }}>
+                        Dark Mode?
 
-                        setToggled(!toggled)
-                    }}
-                />
+                    </Text>
+
+                    <NewToggle
+
+                        colors={pageColors}
+                        toggled={toggled}
+
+                        onToggled={() => {
+
+                            setToggled(!toggled);
+
+                            if (toggled) {
+
+                                setPageColors(lightColors)
+                            }
+                            else {
+
+                                setPageColors(darkColors)
+                            }
+                        }}
+                    />
+                </View>
             </Container>
             
         </Main>
@@ -101,13 +128,39 @@ function App() {
     const [log, setLog] = useState({});
 
     // current list of colours (defaults to lightColors from Colors.js)
-    const [colors, setColors] = useState(darkColors);
+    const [colors, setColors] = useState(lightColors);
 
     // index of bird on info page
     const [infoIndex, setInfoIndex] = useState(0);
 
     // index of bird on info page
     const [unsureList, setUnsureList] = useState([0]);
+
+    const [darkMode, setDarkMode] = useState(false);
+
+    const [a, setA] = useState(false);
+
+    const toggleDarkMode = (toggled) => {
+
+        setDarkMode(!darkMode)
+        console.log(toggled);
+
+        if (toggled) {
+
+            setColors(darkColors)
+            console.log(colors)
+        }
+        else {
+
+            setColors(lightColors)
+            console.log(colors)
+        }
+    }
+
+    const getColors = () => {
+
+        return colors
+    }
 
     return (
 
@@ -131,10 +184,26 @@ function App() {
                     initialParams={{
 
                         colors: colors,
+                        setColors: setColors,
+                        getColors: getColors,
+                        darkMode: darkMode,
+                        toggleDarkMode: toggleDarkMode,
                         birds: birds,
                         log: log,
                         setLog: setLog,
                         setInfoIndex: setInfoIndex,
+
+                        handleLightMode: () => {
+
+                            setA(false)
+                            console.log(a)
+                        },
+
+                        handleDarkMode: () => {
+
+                            setA(true)
+                            console.log(a)
+                        },
                     }}
                 />
 

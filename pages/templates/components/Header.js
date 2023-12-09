@@ -2,6 +2,7 @@ import { Text, View, Image, StatusBar } from 'react-native';
 import BigButton from './BigButton';
 import NavButton from './NavButton';
 import SettingsButton from './SettingsButton';
+import { useState } from 'react';
 
 /*
 
@@ -18,7 +19,6 @@ import SettingsButton from './SettingsButton';
 
 export default function Header(props) {
 
-
     function GetNavButton(admin) {
 
         if (admin) {
@@ -34,7 +34,7 @@ export default function Header(props) {
 
                     onPress={() => {
 
-                        props.navigation.navigate("Admin");
+                        props.navigation.navigate("Admin", { colors: props.colors });
                     }}
                 />
             )
@@ -68,7 +68,7 @@ export default function Header(props) {
 
                     onPress={() => {
 
-                        props.navigation.navigate("Home");
+                        props.navigation.navigate("Home", { colors: props.colors });
                     }}
                 />
 
@@ -137,6 +137,7 @@ export default function Header(props) {
 
                         colors={props.colors}
                         visible={props.hideHome != true}
+                        setPageColors={props.setPageColors}
                     />
 
                 </View>

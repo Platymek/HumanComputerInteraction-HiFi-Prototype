@@ -55,7 +55,7 @@ export default function Dashboard({ navigation, route }) {
 
                         onPress={() => {
 
-                            navigation.navigate("Home")
+                            navigation.navigate("Home", { colors: colors })
                         }}
                     />
                 </Container>

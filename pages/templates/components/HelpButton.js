@@ -18,7 +18,7 @@ export default function HelpButton(props){
 
                 onPress={() => {
 
-                    props.navigation.navigate("Help");
+                    props.navigation.navigate("Help", { colors: props.colors });
                 }}
             />
         </View>
