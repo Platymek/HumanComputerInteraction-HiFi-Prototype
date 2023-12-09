@@ -134,6 +134,7 @@ export default function BigButton(props) {
 
                     borderRadius: 12,
                     alignItems: 'center',
+
                 }, GetShadow(props.lite)]}
 
                 onHoverIn={() => {
@@ -175,9 +176,14 @@ export default function BigButton(props) {
                         style={{
 
                             color: textColor,
+
                             fontSize: props.smallText
                                 ? 20
                                 : 28,
+
+                            fontWeight: props.lite || props.smallText
+                                ? 'bold'
+                                : null,
 
                             textAlign: 'center'
                         }}

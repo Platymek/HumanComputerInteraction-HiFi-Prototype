@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import lightColors from './Colors'
+import lightColors from './ColorsUpdated'
 import birds from './Birds'
 
 import SignUp from './pages/SignUp';
@@ -114,7 +114,7 @@ function App() {
 
             <Stack.Navigator
 
-                initialRouteName="Home"
+                initialRouteName="SignUp"
 
                 screenOptions={{
 

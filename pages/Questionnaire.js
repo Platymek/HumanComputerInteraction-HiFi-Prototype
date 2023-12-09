@@ -84,6 +84,7 @@ export default function Questionnaire({
 
                     fontSize: 18,
                     color: colors[2],
+                    margin: 8,
                 }}>
 
                     <Text style={{ fontWeight: 'bold' }}>Answer the questions to identify your bird. </Text>

@@ -50,7 +50,7 @@ export default function TextBox(props) {
 
                 <Text style={{
 
-                    fontSize: 16,
+                    fontSize: 18,
                     fontWeight: 'bold',
 
                     paddingLeft: 4,
