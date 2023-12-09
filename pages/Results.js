@@ -28,6 +28,7 @@ export default function Results({
 
                     marginBottom: 16,
                     alignContent: 'center',
+                    borderRadius: 32,
                 }}
             >
                 <Text style={{
