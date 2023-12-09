@@ -86,6 +86,7 @@ export default function SettingsButton(props) {
                             width: '100%',
                             flexDirection: 'row',
                             justifyContent: 'space-between',
+                            marginBottom: 16,
                         }}>
                             <Text style={{
 
@@ -114,6 +115,52 @@ export default function SettingsButton(props) {
 
                                     setDarkMode(!darkMode);
                                 }}
+                            />
+                        </View>
+
+                        <View style={{
+
+                            width: '100%',
+                            flexDirection: 'row',
+                            justifyContent: 'space-between',
+                            marginBottom: 16,
+                        }}>
+                            <Text style={{
+
+                                color: props.colors[2],
+                                fontSize: 22,
+                            }}>
+                                Large Text?
+
+                            </Text>
+
+                            <NewToggle
+
+                                colors={props.colors}
+                                toggled={darkMode}
+                            />
+                        </View>
+
+                        <View style={{
+
+                            width: '100%',
+                            flexDirection: 'row',
+                            justifyContent: 'space-between',
+                            marginBottom: 16,
+                        }}>
+                            <Text style={{
+
+                                color: props.colors[2],
+                                fontSize: 22,
+                            }}>
+                                High Contrast Mode?
+
+                            </Text>
+
+                            <NewToggle
+
+                                colors={props.colors}
+                                toggled={darkMode}
                             />
                         </View>
 
