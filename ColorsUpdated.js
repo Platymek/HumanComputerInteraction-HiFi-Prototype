@@ -8,22 +8,22 @@ const colorsUpdated = [
     "#fff",
 
     // dark green (text)
-    "#003245",
+    "#0F6259",
 
     // medium green (buttons)
-    "#008243",
+    "#1c8537",
 
     // grey (backdrops)
     "#ababab",
 
     // red (alt colour)
-    "#8a2310",
+    "#B52B2B",
 
     // red (dark alt colour)
-    "#451215",
+    "#6F0B4E",
 
     // light grey (background colour)
-    "#d6e8db",
+    "#EBF5EC",
 ]
 
 export default colorsUpdated

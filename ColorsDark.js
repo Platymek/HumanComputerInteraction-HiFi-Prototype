@@ -8,22 +8,22 @@ const colorsDark = [
     "#000",
 
     // dark green (text)
-    "#B8EBFF",
+    "#9EF0E6",
 
     // medium green (buttons)
-    "#80FFC1",
+    "#78E293",
 
     // grey (backdrops)
     "#ababab",
 
     // red (alt colour)
-    "#EF8876",
+    "#D44949",
 
     // red (dark alt colour)
-    "#EDBABD",
+    "#F490D3",
 
     // light grey (background colour)
-    "#172929",
+    "#1B361E",
 ]
 
 export default colorsDark
