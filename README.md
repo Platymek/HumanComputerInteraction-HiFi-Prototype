@@ -2,6 +2,8 @@
 # HumanComputerInteraction Hi-Fidelity Prototype
 
 ## How to start
+Node.js must be installed
+
 Open this folder in command line and then type `npx install expo` or `npm install` and run using `npx expo start`. The follow the on-screen instructions 
 on how to run on mobile (web mode is not recommended as the site was made for mobile)
 
