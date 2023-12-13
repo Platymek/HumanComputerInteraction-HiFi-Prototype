@@ -29,6 +29,7 @@ export default function Results({
                     marginBottom: 16,
                     alignContent: 'center',
                     borderRadius: 32,
+                    paddingBottom: 0,
                 }}
             >
                 <Text style={{
@@ -37,7 +38,6 @@ export default function Results({
                     color: colors[2],
                     margin: 2,
                     marginTop: 4,
-                    marginBottom: 8,
                 }}>
                     <Text style={{ fontWeight: 'bold' }}>Want to see all of the data? </Text>
                     Press to download for use with any spreadsheet software of your choice (e.g. Excel).
@@ -47,7 +47,9 @@ export default function Results({
                 <BigButton
 
                     colors={colors}
-                    title={"Download .CSV"}
+                    title={"download data .csv"}
+                    lite={true}
+                    smallText={true}
                 />
 
             </Container>
